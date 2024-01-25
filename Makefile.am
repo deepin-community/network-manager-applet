@@ -65,6 +65,7 @@ icon22_DATA = \
 	icons/22/nm-device-wired-secure.png \
 	icons/22/nm-device-wired.png \
 	icons/22/nm-device-wwan.png \
+	icons/22/nm-insecure-warn.png \
 	icons/22/nm-mb-roam.png \
 	icons/22/nm-no-connection.png \
 	icons/22/nm-secure-lock.png \
@@ -234,6 +235,28 @@ EXTRA_DIST += src/utils/meson.build
 
 ###############################################################################
 
+check_PROGRAMS_norun += src/tests/ethernet-dialog
+
+src_tests_ethernet_dialog_SOURCES = \
+	src/applet-resources.h \
+	src/applet-resources.c \
+	src/applet-dialogs.c \
+	src/applet-dialogs.h \
+	src/ethernet-dialog.c \
+	src/ethernet-dialog.h \
+	src/tests/ethernet-dialog.c
+
+src_tests_ethernet_dialog_CPPFLAGS = \
+	"-I$(srcdir)/src/" \
+	$(src_nm_applet_CPPFLAGS)
+
+src_tests_ethernet_dialog_LDADD = \
+	$(src_nm_applet_LDADD)
+
+EXTRA_DIST += src/tests/meson.build
+
+###############################################################################
+
 wireless_security_c_real = \
 	src/wireless-security/eap-method.h \
 	src/wireless-security/eap-method.c
@@ -315,8 +338,8 @@ connection_editor_hc_real = \
 	src/connection-editor/page-proxy.c \
 	src/connection-editor/page-vpn.h \
 	src/connection-editor/page-vpn.c \
-	src/connection-editor/page-master.h \
-	src/connection-editor/page-master.c \
+	src/connection-editor/page-controller.h \
+	src/connection-editor/page-controller.c \
 	src/connection-editor/page-bond.h \
 	src/connection-editor/page-bond.c \
 	src/connection-editor/page-team.h \
@@ -592,6 +615,9 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 nm-connection-editor.desktop: nm-connection-editor.desktop.in
 	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+
+gsettings_SCHEMAS = org.gnome.nm-applet.gschema.xml
+@GSETTINGS_RULES@
 
 appdatadir = $(datadir)/metainfo
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)

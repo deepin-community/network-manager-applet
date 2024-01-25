@@ -10,9 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-applet.master.ta\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/network-manager-"
-"applet/\n"
-"POT-Creation-Date: 2021-08-17 10:12+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/network-manager-applet/"
+"issues\n"
+"POT-Creation-Date: 2023-10-04 18:29+0200\n"
 "PO-Revision-Date: 2012-02-27 13:19+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -30,9 +30,9 @@ msgstr ""
 "\n"
 "X-Generator: Lokalize 1.1\n"
 
-#: nm-applet.desktop.in:3 src/applet-dialogs.c:724 src/applet.c:3258
-msgid "Network"
-msgstr "பிணையம்"
+#: nm-applet.desktop.in:3 src/applet.c:3280
+msgid "NetworkManager Applet"
+msgstr "பிணைய மேலாளர் அப்லெட்"
 
 #: nm-applet.desktop.in:4
 msgid "Manage your network connections"
@@ -74,6 +74,92 @@ msgstr "செயலிலுள்ள பிணைய இணைப்புக�
 msgid "Manage and change your network connection settings"
 msgstr "உங்களின் பிணைய இணைப்பு அமைவுகளை மேலாண்மை மற்றும் மாற்றவும்"
 
+#: org.gnome.nm-applet.gschema.xml.in:6
+msgid "Disable connected notifications"
+msgstr "செயல்படுத்தாத இணைக்கப்பட்ட அறிவிப்புகள்"
+
+#: org.gnome.nm-applet.gschema.xml.in:7
+#, fuzzy
+msgid "Set this to true to disable notifications when connecting to a network."
+msgstr ""
+"Set this to TRUE to disable notifications when connecting to a network."
+
+#: org.gnome.nm-applet.gschema.xml.in:11
+msgid "Disable disconnected notifications"
+msgstr "செயல்படுத்தாத இணைக்கப்படாத அறிவிப்புகள்"
+
+#: org.gnome.nm-applet.gschema.xml.in:12
+#, fuzzy
+msgid ""
+"Set this to true to disable notifications when disconnecting from a network."
+msgstr ""
+"Set this to TRUE to disable notifications when disconnecting from a network."
+
+#: org.gnome.nm-applet.gschema.xml.in:16
+#, fuzzy
+msgid "Disable VPN notifications"
+msgstr "செயல்படுத்தாத இணைக்கப்பட்ட அறிவிப்புகள்"
+
+#: org.gnome.nm-applet.gschema.xml.in:17
+#, fuzzy
+msgid ""
+"Set this to true to disable notifications when connecting to or "
+"disconnecting from a VPN."
+msgstr ""
+"Set this to TRUE to disable notifications when disconnecting from a network."
+
+#: org.gnome.nm-applet.gschema.xml.in:21
+msgid "Suppress networks available notifications"
+msgstr "கிடைக்கக்கூடிய அறிவிப்புகளின் பிணையத்தை குறைக்கிறது"
+
+#: org.gnome.nm-applet.gschema.xml.in:22
+#, fuzzy
+msgid ""
+"Set this to true to disable notifications when Wi-Fi networks are available."
+msgstr ""
+"Set this to TRUE to disable notifications when wireless networks are "
+"available."
+
+#: org.gnome.nm-applet.gschema.xml.in:26
+msgid "Stamp"
+msgstr "முத்திரை"
+
+#: org.gnome.nm-applet.gschema.xml.in:27
+msgid "Used to determine whether settings should be migrated to a new version."
+msgstr ""
+"Used to determine whether settings should be migrated to a new version."
+
+#: org.gnome.nm-applet.gschema.xml.in:31
+#, fuzzy
+msgid "Disable WiFi Create"
+msgstr "செயல்நீக்க Wi-Fiஐ உருவாக்கு"
+
+#: org.gnome.nm-applet.gschema.xml.in:32
+#, fuzzy
+msgid ""
+"Set to true to disable creation of adhoc networks when using the applet."
+msgstr ""
+"அப்லெட்டைப் பயன்படுத்தும் போது சரி என்பதற்கு செயல்நீக்க உருவாக்கமான  adhoc பிணையங்களை "
+"அமைக்கவும்."
+
+#: org.gnome.nm-applet.gschema.xml.in:36
+msgid "Suppress broadband device unlock prompt"
+msgstr ""
+
+#: org.gnome.nm-applet.gschema.xml.in:37
+msgid ""
+"Set to true to not prompt for PIN/PUK when providing it is required to "
+"unlock a broadband device."
+msgstr ""
+
+#: org.gnome.nm-applet.gschema.xml.in:41
+msgid "Show the applet in notification area"
+msgstr ""
+
+#: org.gnome.nm-applet.gschema.xml.in:42
+msgid "Set to FALSE to disable displaying the applet in the notification area."
+msgstr ""
+
 #: shared/nm-utils/nm-shared-utils.c:793
 #, c-format
 msgid "object class '%s' has no property named '%s'"
@@ -107,7 +193,7 @@ msgid ""
 "type '%s'"
 msgstr ""
 
-#: src/8021x.ui:11 src/ethernet-dialog.c:87
+#: src/8021x.ui:7 src/ethernet-dialog.c:90
 #, fuzzy
 msgid "802.1X authentication"
 msgstr "ஒயர்டு 802.1X அங்கீகாரம்"
@@ -120,14 +206,14 @@ msgstr "ஒயர்டு 802.1X அங்கீகாரம்"
 #: src/connection-editor/ce-page-dcb.ui:1019
 #: src/connection-editor/ce-page-wireguard.ui:41
 #: src/connection-editor/ce-ppp-auth-methods.ui:28
-#: src/connection-editor/connection-helpers.c:284
-#: src/connection-editor/connection-helpers.c:747
+#: src/connection-editor/connection-helpers.c:332
+#: src/connection-editor/connection-helpers.c:795
 #: src/connection-editor/nm-connection-editor.ui:197
 #: src/connection-editor/page-bluetooth.c:293
 #: src/connection-editor/page-mobile.c:530
 #: src/connection-editor/page-proxy.c:107
 #: src/connection-editor/page-team-port.c:192
-#: src/connection-editor/page-team.c:330
+#: src/connection-editor/page-team.c:329
 #: src/connection-editor/vpn-helpers.c:198 src/gsm-unlock.ui:28
 #: src/mobile-helpers.c:451
 msgid "_Cancel"
@@ -142,13 +228,17 @@ msgstr "இணை (_o)"
 msgid "_Network name"
 msgstr "பிணைய பெயர் (_N):"
 
-#: src/ap-menu-item.c:67
+#: src/ap-menu-item.c:68
 #, fuzzy
 msgid "ad-hoc"
 msgstr "தற்காலிக"
 
-#: src/ap-menu-item.c:72
+#: src/ap-menu-item.c:73
 msgid "secure."
+msgstr ""
+
+#: src/ap-menu-item.c:77
+msgid "insecure."
 msgstr ""
 
 #: src/applet-device-broadband.c:147
@@ -165,48 +255,48 @@ msgstr "தவறான PIN குறியீடு; உங்கள் வழ�
 msgid "Sending unlock code…"
 msgstr "பூட்டுநீக்கிய குறியீட்டை அனுப்புகிறது..."
 
-#: src/applet-device-broadband.c:725 src/applet-dialogs.c:521
+#: src/applet-device-broadband.c:729 src/applet-dialogs.c:521
 #, c-format
 msgid "Mobile Broadband (%s)"
 msgstr "மொபைல் பிராட்பேண்டு (%s)"
 
-#: src/applet-device-broadband.c:727
+#: src/applet-device-broadband.c:731
 #: src/connection-editor/connection-helpers.c:95
 #: src/connection-editor/page-mobile.c:295
 msgid "Mobile Broadband"
 msgstr "மொபைல் பிராட்பேண்டு"
 
-#: src/applet-device-broadband.c:780 src/applet-device-bt.c:61
-#: src/applet-device-ethernet.c:107 src/applet-device-wifi.c:894
+#: src/applet-device-broadband.c:784 src/applet-device-bt.c:61
+#: src/applet-device-ethernet.c:107
 msgid "Available"
 msgstr "கிடைக்கக்கூடி"
 
 #. Default connection item
-#: src/applet-device-broadband.c:793
+#: src/applet-device-broadband.c:797
 #, fuzzy
 msgid "New Mobile Broadband connection…"
 msgstr "புதிய மொபைல் பிராட்பேண்டு இணைப்பு"
 
-#: src/applet-device-broadband.c:809 src/applet-device-bt.c:75
-#: src/applet-device-ethernet.c:124 src/applet-device-wifi.c:1297
+#: src/applet-device-broadband.c:813 src/applet-device-bt.c:75
+#: src/applet-device-ethernet.c:124 src/applet-device-wifi.c:1251
 msgid "Connection Established"
 msgstr "இணைப்பு ஸ்தாபிக்கப்படுகிறது"
 
-#: src/applet-device-broadband.c:810
+#: src/applet-device-broadband.c:814
 #, fuzzy
 msgid "You are now connected to the Mobile Broadband network."
 msgstr "இப்போது மொபைல் ப்ராட்பேண்ட் பிணையத்தோடு இணைக்கப்படுகிறது."
 
-#: src/applet-device-broadband.c:950 src/applet-device-broadband.c:956
+#: src/applet-device-broadband.c:954 src/applet-device-broadband.c:960
 #, fuzzy
 msgid "Mobile Broadband network."
 msgstr "மொபைல் பிராட்பேண்டு பிணையத்தின் கடவுச்சொல்"
 
-#: src/applet-device-broadband.c:951
+#: src/applet-device-broadband.c:955
 msgid "You are now registered on the home network."
 msgstr "இப்போது நீங்கள் வீட்டு வலைப்பின்னலுடன் பதிவு செய்யப்படுகிறீர்கள்"
 
-#: src/applet-device-broadband.c:957
+#: src/applet-device-broadband.c:961
 msgid "You are now registered on a roaming network."
 msgstr "இப்போது நீங்கள்  அலையும் வலைப்பின்னலுடன் பதிவு செய்யப்படுகிறீர்கள்."
 
@@ -229,7 +319,7 @@ msgstr "கட்டமைக்கப்பட்ட மொபைல் பி�
 msgid "User authentication required for mobile broadband connection “%s”…"
 msgstr "'%s'ன் மொபைல் பிராட்பேண்டு இணைப்புக்கு பயனர் அங்கீகாரம் தேவைப்படுகிறது..."
 
-#: src/applet-device-bt.c:113 src/applet.c:2604 src/mobile-helpers.c:593
+#: src/applet-device-bt.c:113 src/applet.c:2510 src/mobile-helpers.c:593
 #, fuzzy, c-format
 msgid "Requesting a network address for “%s”…"
 msgstr "ஒரு பிணைய முகவரி '%s'காக தேவைப்படுகிறது..."
@@ -264,7 +354,7 @@ msgid "Ethernet Network"
 msgstr "ஒயர்டு பிணையம்"
 
 #. Notify user of unmanaged or unavailable device
-#: src/applet-device-ethernet.c:99 src/applet.c:1359
+#: src/applet-device-ethernet.c:99 src/applet.c:1265
 msgid "disconnected"
 msgstr "துணைடிக்கப்பட்டது"
 
@@ -327,7 +417,7 @@ msgstr "புதிய ஒர்லெஸ் பிணையத்தை உர
 msgid "(none)"
 msgstr "(ஒன்றுமில்லை)"
 
-#: src/applet-device-wifi.c:523 src/applet-device-wifi.c:1397
+#: src/applet-device-wifi.c:523 src/applet-device-wifi.c:1349
 #, fuzzy
 msgid "Failed to add new connection"
 msgstr "புதிய இணைப்பை திருத்த முடியவில்லை"
@@ -336,100 +426,96 @@ msgstr "புதிய இணைப்பை திருத்த முடி
 msgid "Insufficient privileges."
 msgstr ""
 
-#: src/applet-device-wifi.c:526 src/applet-device-wifi.c:1379
-#: src/applet-device-wifi.c:1402 src/applet.c:417 src/applet.c:506
+#: src/applet-device-wifi.c:526 src/applet-device-wifi.c:1332
+#: src/applet-device-wifi.c:1352 src/applet.c:414 src/applet.c:497
 #, fuzzy
 msgid "Connection failure"
 msgstr "இணைப்பை சேர்க்க முடியவில்லை"
 
-#: src/applet-device-wifi.c:826
+#: src/applet-device-wifi.c:827
 #, fuzzy, c-format
 msgid "Wi-Fi Networks (%s)"
 msgstr "ஒயர்டு பிணையங்கள் (%s)"
 
-#: src/applet-device-wifi.c:828
+#: src/applet-device-wifi.c:829
 #, fuzzy, c-format
 msgid "Wi-Fi Network (%s)"
 msgstr "ஒயர்டு பிணையம் (%s)"
 
-#: src/applet-device-wifi.c:830
+#: src/applet-device-wifi.c:831
 #, fuzzy
 msgid "Wi-Fi Network"
 msgid_plural "Wi-Fi Networks"
 msgstr[0] "ஒயர்டு பிணையம்"
 msgstr[1] "ஒயர்டு பிணையம்"
 
-#: src/applet-device-wifi.c:859
+#: src/applet-device-wifi.c:860
 #, fuzzy
 msgid "Wi-Fi is disabled"
 msgstr "வைமாக்ஸ்  ஐ செயல்நீக்கு"
 
-#: src/applet-device-wifi.c:860
+#: src/applet-device-wifi.c:861
 #, fuzzy
 msgid "Wi-Fi is disabled by hardware switch"
 msgstr "வன்பொருள் மாற்றியால் வைமாக்ஸ் செயல்நீக்கப்பட்டது"
 
-#: src/applet-device-wifi.c:921
-msgid "More networks"
-msgstr "நிறைய பிணையங்கள்"
+#: src/applet-device-wifi.c:887
+#, fuzzy
+msgid "_Available networks"
+msgstr "அனைத்து பயனர்களுக்கும் கிடைக்கப் பெறும"
 
-#: src/applet-device-wifi.c:1111
+#: src/applet-device-wifi.c:1066
 #, fuzzy
 msgid "Wi-Fi Networks Available"
 msgstr "ஒயர்லெஸ் பிணையங்கள் இருக்கிறது"
 
-#: src/applet-device-wifi.c:1112
+#: src/applet-device-wifi.c:1067
 #, fuzzy
 msgid "Use the network menu to connect to a Wi-Fi network"
 msgstr "ஒரு ஒயர்லெஸ் பிணையத்தை இணைப்பதற்கு இந்த பிணைய பட்டியை பயன்படுத்துக"
 
-#: src/applet-device-wifi.c:1115 src/applet.c:828
-#, fuzzy
-msgid "Don’t show this message again"
-msgstr "இந்த செய்தியை மீண்டும் காட்டாதே"
-
-#: src/applet-device-wifi.c:1296
+#: src/applet-device-wifi.c:1249
 #, fuzzy, c-format
 msgid "You are now connected to the Wi-Fi network “%s”."
 msgstr "இப்போது நீங்கள் Wi-Fi பிணையம் '%s' உடன் இணைக்கப்பட்டுள்ளீர்கள்."
 
-#: src/applet-device-wifi.c:1331
+#: src/applet-device-wifi.c:1286
 #, fuzzy, c-format
 msgid "Preparing Wi-Fi network connection “%s”…"
 msgstr "பிணைய இணைப்பு '%s' தயாராகிறது..."
 
-#: src/applet-device-wifi.c:1334
+#: src/applet-device-wifi.c:1289
 #, fuzzy, c-format
 msgid "Configuring Wi-Fi network connection “%s”…"
 msgstr "கட்டமைக்கப்பட்ட ஒயர்டு பிணைய இணைப்பு '%s'..."
 
-#: src/applet-device-wifi.c:1337
+#: src/applet-device-wifi.c:1292
 #, fuzzy, c-format
 msgid "User authentication required for Wi-Fi network “%s”…"
 msgstr "'%s'ன் ஒயர்லெஸ் பிணைய இணைப்புக்கு பயனர் அங்கீகாரம் தேவைப்படுகிறது..."
 
-#: src/applet-device-wifi.c:1340
+#: src/applet-device-wifi.c:1295
 #, fuzzy, c-format
 msgid "Requesting a Wi-Fi network address for “%s”…"
 msgstr "ஒரு பிணைய முகவரி '%s'காக தேவைப்படுகிறது..."
 
-#: src/applet-device-wifi.c:1351
+#: src/applet-device-wifi.c:1306
 #, fuzzy, c-format
 msgid "Wi-Fi network connection “%s” active: %s (%d%%)"
 msgstr "ஒயர்லெஸ் பிணைய இணைப்பு '%s' செயல்படுகிறது: %s (%d%%)"
 
-#: src/applet-device-wifi.c:1355
+#: src/applet-device-wifi.c:1310
 #, fuzzy, c-format
 msgid "Wi-Fi network connection “%s” active"
 msgstr "ஒயர்டு பிணைய இணைப்பு '%s' செயலிபடுகிறது"
 
-#: src/applet-device-wifi.c:1374
+#: src/applet-device-wifi.c:1329
 #, fuzzy
 msgid "Failed to activate connection"
 msgstr "பான் (PAN) இணைப்பை உருவாக்க முடியவில்லை: %s"
 
-#: src/applet-device-wifi.c:1376 src/applet-device-wifi.c:1399 src/applet.c:414
-#: src/applet.c:468 src/applet.c:503
+#: src/applet-device-wifi.c:1330 src/applet-device-wifi.c:1350 src/applet.c:412
+#: src/applet.c:463 src/applet.c:495
 #, fuzzy
 msgid "Unknown error"
 msgstr "தெரியாத"
@@ -438,7 +524,7 @@ msgstr "தெரியாத"
 msgid "Error displaying connection information:"
 msgstr "பிழை காட்டும் இணைப்பு தகவல்:"
 
-#: src/applet-dialogs.c:60 src/connection-editor/page-wifi-security.c:369
+#: src/applet-dialogs.c:60 src/connection-editor/page-wifi-security.c:384
 msgid "LEAP"
 msgstr "LEAP"
 
@@ -446,7 +532,7 @@ msgstr "LEAP"
 msgid "Dynamic WEP"
 msgstr "மாறும்           WEP"
 
-#: src/applet-dialogs.c:64 src/applet-dialogs.c:226 src/applet-dialogs.c:228
+#: src/applet-dialogs.c:64 src/applet-dialogs.c:226
 msgid "WPA/WPA2"
 msgstr "WPA/WPA2"
 
@@ -460,12 +546,17 @@ msgstr "முகவரிகள்"
 msgid "WEP"
 msgstr "WEP"
 
+#: src/applet-dialogs.c:228
+#, fuzzy
+msgid "WPA/WPA2/WPA3"
+msgstr "WPA/WPA2"
+
 #: src/applet-dialogs.c:230
 msgid "WPA3"
 msgstr ""
 
 #: src/applet-dialogs.c:234 src/applet-dialogs.c:243
-#: src/connection-editor/page-wifi-security.c:320
+#: src/connection-editor/page-wifi-security.c:327
 #, fuzzy
 msgctxt "Wi-Fi/Ethernet security"
 msgid "None"
@@ -588,6 +679,10 @@ msgstr "ஐபிவி 6"
 #: src/applet-dialogs.c:717 src/connection-editor/ce-page-wifi.ui:52
 msgid "Hotspot"
 msgstr ""
+
+#: src/applet-dialogs.c:724 src/applet.c:3166
+msgid "Network"
+msgstr "பிணையம்"
 
 #: src/applet-dialogs.c:735
 #, fuzzy
@@ -752,27 +847,32 @@ msgstr "டன் (DUN) இணைப்பை உருவாக்க முட
 msgid "Failed to write connection to VPN UI: incomplete write"
 msgstr ""
 
-#: src/applet.c:412
+#: src/applet.c:411
 #, fuzzy
 msgid "Failed to add/activate connection"
 msgstr "பான் (PAN) இணைப்பை உருவாக்க முடியவில்லை: %s"
 
-#: src/applet.c:466
+#: src/applet.c:462
 #, fuzzy
 msgid "Device disconnect failed"
 msgstr "துணைடிக்கப்பட்டது"
 
-#: src/applet.c:471
+#: src/applet.c:465
 #, fuzzy
 msgid "Disconnect failure"
 msgstr "துண்டிக்கபட்டது"
 
-#: src/applet.c:501
+#: src/applet.c:494
 #, fuzzy
 msgid "Connection activation failed"
 msgstr "இணைப்பை சேர்க்க முடியவில்லை"
 
-#: src/applet.c:925
+#: src/applet.c:731
+#, fuzzy
+msgid "Don’t show this message again"
+msgstr "இந்த செய்தியை மீண்டும் காட்டாதே"
+
+#: src/applet.c:831
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -782,7 +882,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' துண்டிக்கப்பட்டது ஏனெனில் பிணைய இணைப்பில் தடங்கல் ஏற்பட்டது."
 
-#: src/applet.c:927
+#: src/applet.c:833
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -792,7 +892,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' தோல்வியுற்றது ஏனெனில் பிணைய இணைப்பு தடங்கல் செய்கிறது."
 
-#: src/applet.c:929
+#: src/applet.c:835
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -801,7 +901,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' தோல்வியுற்றது ஏனெனில் VPN சேவை எதிர்பாரமல் நிறுத்தப்பட்டது."
 
-#: src/applet.c:931
+#: src/applet.c:837
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -812,7 +912,7 @@ msgstr ""
 "The VPN connection '%s' failed because the VPN service returned invalid "
 "configuration."
 
-#: src/applet.c:933
+#: src/applet.c:839
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -821,7 +921,7 @@ msgstr ""
 "\n"
 "The VPN connection '%s' failed because the connection attempt timed out."
 
-#: src/applet.c:935
+#: src/applet.c:841
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -830,7 +930,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' தோல்வியுற்றது ஏனெனில் VPN சேவை நேரத்திற்கு துவக்கவில்லை."
 
-#: src/applet.c:937
+#: src/applet.c:843
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -839,7 +939,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' தோல்வியுற்றது ஏனெனில் VPN சேவை துவக்கவில்லை."
 
-#: src/applet.c:939
+#: src/applet.c:845
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -848,7 +948,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' தோல்வியுற்றது ஏனெனில் அங்கே சரியான VPNரகசியங்கள் இல்லை.."
 
-#: src/applet.c:941
+#: src/applet.c:847
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -857,7 +957,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' தோல்வியுற்றது ஏனெனில் தவறான VPN ரகசியங்கள்."
 
-#: src/applet.c:946
+#: src/applet.c:852
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -866,7 +966,7 @@ msgstr ""
 "\n"
 "VPN இணைப்பு '%s' தோல்வியுற்றது."
 
-#: src/applet.c:973
+#: src/applet.c:879
 #, c-format
 msgid ""
 "VPN connection has been successfully established.\n"
@@ -874,19 +974,19 @@ msgid ""
 "%s\n"
 msgstr ""
 
-#: src/applet.c:975
+#: src/applet.c:881
 msgid "VPN connection has been successfully established.\n"
 msgstr ""
 
-#: src/applet.c:977
+#: src/applet.c:883
 msgid "VPN Login Message"
 msgstr "VPN உட்புகும் செய்தி"
 
-#: src/applet.c:985 src/applet.c:1025
+#: src/applet.c:891 src/applet.c:931
 msgid "VPN Connection Failed"
 msgstr "VPN இணைப்பு தோல்வியுற்றது"
 
-#: src/applet.c:1029
+#: src/applet.c:935
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -899,7 +999,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/applet.c:1032
+#: src/applet.c:938
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -912,140 +1012,136 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/applet.c:1347
+#: src/applet.c:1253
 msgid "device not ready (firmware missing)"
 msgstr "சாதனம் தயாராக இல்லை (தளநிரல் இல்லை)"
 
-#: src/applet.c:1349
+#: src/applet.c:1255
 msgid "device not ready"
 msgstr "சாதனம் தயாராக இல்லை"
 
-#: src/applet.c:1375
+#: src/applet.c:1281
 msgid "Disconnect"
 msgstr "துண்டி"
 
-#: src/applet.c:1389
+#: src/applet.c:1295
 msgid "device not managed"
 msgstr "சாதனம் மேலாண்மை செய்யப்படவில்லை"
 
-#: src/applet.c:1463
+#: src/applet.c:1369
 msgid "No network devices available"
 msgstr "பிணைய சாதனம் கிடைக்கப்பெறவில்லை"
 
-#: src/applet.c:1509
+#: src/applet.c:1415
 msgid "_VPN Connections"
 msgstr "_VPN இணைப்புகள்"
 
-#: src/applet.c:1553
+#: src/applet.c:1459
 #, fuzzy
 msgid "_Configure VPN…"
 msgstr " VPNஐ கட்டமைக்கவும் (_C)..."
 
-#: src/applet.c:1556
+#: src/applet.c:1462
 #, fuzzy
 msgid "_Add a VPN connection…"
 msgstr "_VPN இணைப்புகள்"
 
-#: src/applet.c:1662
+#: src/applet.c:1568
 #, fuzzy
 msgid "NetworkManager is not running…"
 msgstr "பிணைய மேலாளர் இயக்கத்தில் இல்லை..."
 
-#: src/applet.c:1667 src/applet.c:2735
+#: src/applet.c:1573 src/applet.c:2641
 msgid "Networking disabled"
 msgstr "பிணைய செயல்நீக்கப்பட்டது"
 
 #. 'Enable Networking' item
-#: src/applet.c:1877
+#: src/applet.c:1783
 msgid "Enable _Networking"
 msgstr "பிணையம் செயல்படுகிறது (_N)"
 
 #. 'Enable Wi-Fi' item
-#: src/applet.c:1886
+#: src/applet.c:1792
 #, fuzzy
 msgid "Enable _Wi-Fi"
 msgstr "ஒயர்லெஸ் செயல்படுகிறது (_W)"
 
 #. 'Enable Mobile Broadband' item
-#: src/applet.c:1895
+#: src/applet.c:1801
 msgid "Enable _Mobile Broadband"
 msgstr "மொபைல் பிராட்பேண்டை செயற்படுத்தவும் (_M)"
 
 #. Toggle notifications item
-#: src/applet.c:1907
+#: src/applet.c:1813
 msgid "Enable N_otifications"
 msgstr "அறிவிப்புகளை செயற்படுத்தவும் (_o)"
 
 #. 'Connection Information' item
-#: src/applet.c:1919
+#: src/applet.c:1825
 msgid "Connection _Information"
 msgstr "இணைப்பு தகவல் (_I)"
 
 #. 'Edit Connections...' item
-#: src/applet.c:1927
+#: src/applet.c:1833
 #, fuzzy
 msgid "Edit Connections…"
 msgstr "இணைப்புகளை திருத்தவும்..."
 
-#: src/applet.c:1941
+#: src/applet.c:1847
 msgid "_About"
 msgstr "பற்றி (_A)"
 
-#: src/applet.c:2255
+#: src/applet.c:2161
 #, fuzzy, c-format
 msgid "You are now connected to “%s”."
 msgstr "நீங்கள் இப்போது '%s'உடன் இணைப்படுகிறார்கள்."
 
-#: src/applet.c:2295
+#: src/applet.c:2201
 msgid "Disconnected"
 msgstr "துண்டிக்கபட்டது"
 
-#: src/applet.c:2296
+#: src/applet.c:2202
 msgid "The network connection has been disconnected."
 msgstr "பிணைய இணைப்பு துண்டிக்கப்படும்."
 
-#: src/applet.c:2598
+#: src/applet.c:2504
 #, fuzzy, c-format
 msgid "Preparing network connection “%s”…"
 msgstr "பிணைய இணைப்பு '%s' தயாராகிறது..."
 
-#: src/applet.c:2601
+#: src/applet.c:2507
 #, fuzzy, c-format
 msgid "User authentication required for network connection “%s”…"
 msgstr "பிணைய இணைப்பு '%s'காக பயனர் அங்கீகாரம் தேவைப்படுகிறது..."
 
-#: src/applet.c:2607
+#: src/applet.c:2513
 #, fuzzy, c-format
 msgid "Network connection “%s” active"
 msgstr "பிணைய இணைப்பு '%s' செயல்படுகிறது"
 
-#: src/applet.c:2680
+#: src/applet.c:2586
 #, fuzzy, c-format
 msgid "Starting VPN connection “%s”…"
 msgstr "VPN இணைப்பு '%s'துவங்குகிறது..."
 
-#: src/applet.c:2683
+#: src/applet.c:2589
 #, fuzzy, c-format
 msgid "User authentication required for VPN connection “%s”…"
 msgstr "VPN இணைப்பு '%s'காக பயனர் அங்கீகாரம் தேவைப்படுகிறது..."
 
-#: src/applet.c:2686
+#: src/applet.c:2592
 #, fuzzy, c-format
 msgid "Requesting a VPN address for “%s”…"
 msgstr "'%s'காக ஒரு VPN முகவரி தேவைப்படுகிறது..."
 
-#: src/applet.c:2689
+#: src/applet.c:2595
 #, fuzzy
 msgid "VPN connection active"
 msgstr "VPN இணைப்பு '%s' செயல்படுகிறது"
 
-#: src/applet.c:2739
+#: src/applet.c:2645
 msgid "No network connection"
 msgstr "பிணைய இணைப்பு இல்லை"
-
-#: src/applet.c:3359
-msgid "NetworkManager Applet"
-msgstr "பிணைய மேலாளர் அப்லெட்"
 
 #: src/connection-editor/ce-ip4-routes.ui:88
 #: src/connection-editor/ce-ip6-routes.ui:88 src/connection-editor/ce-page.h:97
@@ -1077,7 +1173,7 @@ msgstr ""
 #: src/connection-editor/ce-page-ip6.ui:199
 #: src/connection-editor/ce-page-team.ui:262
 #: src/connection-editor/ce-page-wireguard.ui:617
-#: src/connection-editor/connection-helpers.c:748
+#: src/connection-editor/connection-helpers.c:796
 #: src/connection-editor/nm-connection-list.ui:101
 msgid "_Delete"
 msgstr "_D அழி"
@@ -1176,7 +1272,7 @@ msgid "Bonded _connections"
 msgstr "பிணைப்பு இணைப்புகள் (_c):"
 
 #: src/connection-editor/ce-page-bond.ui:105
-#: src/connection-editor/ce-page-wifi.ui:400
+#: src/connection-editor/ce-page-wifi.ui:294
 #, fuzzy
 msgid "M_ode"
 msgstr "முறைமை (_o):"
@@ -2052,10 +2148,10 @@ msgstr ""
 msgid ""
 "If enabled, it makes the kernel generate a temporary IPv6 address in "
 "addition to the public one generated from MAC address. This enhances "
-"privacy, but could cause problems in some applications. If set to \"Default"
-"\", the value from NetworkManager global configuration is used. If that is "
-"also unset, use the kernel default value read from file \"/proc/sys/net/ipv6/"
-"conf/default/use_tempaddr\""
+"privacy, but could cause problems in some applications. If set to "
+"\"Default\", the value from NetworkManager global configuration is used. If "
+"that is also unset, use the kernel default value read from file \"/proc/sys/"
+"net/ipv6/conf/default/use_tempaddr\""
 msgstr ""
 
 #: src/connection-editor/ce-page-ip6.ui:323
@@ -2311,7 +2407,7 @@ msgid "Ad_vanced…"
 msgstr "மேம்பட்ட"
 
 #: src/connection-editor/ce-page-team-port.ui:108
-msgid "Set by master"
+msgid "Set by controller"
 msgstr ""
 
 #: src/connection-editor/ce-page-team-port.ui:112
@@ -2741,7 +2837,7 @@ msgstr ""
 #: src/connection-editor/ce-page-team.ui:960
 msgid ""
 "Specifies the minimum number of ports that must be active before asserting "
-"carrier in the master interface, value can be 1 – 255."
+"carrier in the controller interface, value can be 1 – 255."
 msgstr ""
 
 #: src/connection-editor/ce-page-team.ui:972
@@ -2851,40 +2947,22 @@ msgstr ""
 msgid "Ad-hoc"
 msgstr "தற்காலிக"
 
-#: src/connection-editor/ce-page-wifi.ui:203
-msgid "mW"
-msgstr "mW"
-
-#: src/connection-editor/ce-page-wifi.ui:222
-#, fuzzy
-msgid "Transmission po_wer"
-msgstr "மாற்றப்படும் பவர் (_w):"
-
-#: src/connection-editor/ce-page-wifi.ui:256
-msgid "Mb/s"
-msgstr "Mb/s"
-
-#: src/connection-editor/ce-page-wifi.ui:275
-#, fuzzy
-msgid "_Rate"
-msgstr "விகிதம்: (_R)"
-
-#: src/connection-editor/ce-page-wifi.ui:311
+#: src/connection-editor/ce-page-wifi.ui:205
 #, fuzzy
 msgid "_BSSID"
 msgstr "_BSSID:"
 
-#: src/connection-editor/ce-page-wifi.ui:336
+#: src/connection-editor/ce-page-wifi.ui:230
 #, fuzzy
 msgid "C_hannel"
 msgstr "சேனல் (_h):"
 
-#: src/connection-editor/ce-page-wifi.ui:368
+#: src/connection-editor/ce-page-wifi.ui:262
 #, fuzzy
 msgid "Ban_d"
 msgstr "பிணைப்பு (_d):"
 
-#: src/connection-editor/ce-page-wifi.ui:414
+#: src/connection-editor/ce-page-wifi.ui:308
 #, fuzzy
 msgid "SS_ID"
 msgstr "SS_ID:"
@@ -3218,7 +3296,7 @@ msgid "Bond"
 msgstr "பிணைப்பு"
 
 #: src/connection-editor/connection-helpers.c:105
-#: src/connection-editor/page-team.c:1014
+#: src/connection-editor/page-team.c:1013
 msgid "Team"
 msgstr ""
 
@@ -3244,16 +3322,21 @@ msgid "WireGuard"
 msgstr "ஒயர்டு"
 
 #: src/connection-editor/connection-helpers.c:112
-#: src/connection-editor/connection-helpers.c:374
-#: src/connection-editor/page-vpn.c:86
+#: src/connection-editor/connection-helpers.c:422
+#: src/connection-editor/page-vpn.c:92
 msgid "VPN"
 msgstr "VPN"
 
-#: src/connection-editor/connection-helpers.c:192
+#: src/connection-editor/connection-helpers.c:202
+#, c-format
+msgid "VPN plugin “%s” not found"
+msgstr ""
+
+#: src/connection-editor/connection-helpers.c:227
 msgid "No VPN service type."
 msgstr ""
 
-#: src/connection-editor/connection-helpers.c:197
+#: src/connection-editor/connection-helpers.c:241
 #, fuzzy
 msgid "The VPN plugin failed to import the VPN connection correctly: "
 msgstr ""
@@ -3261,49 +3344,49 @@ msgstr ""
 "\n"
 "பிழை: VPN சேவை வகை இல்லை."
 
-#: src/connection-editor/connection-helpers.c:281
+#: src/connection-editor/connection-helpers.c:329
 #: src/connection-editor/page-proxy.c:104
 #: src/connection-editor/page-team-port.c:189
-#: src/connection-editor/page-team.c:327
+#: src/connection-editor/page-team.c:326
 msgid "Select file to import"
 msgstr "இறக்க கோப்பை தேர்ந்தெடுக்கவும்"
 
-#: src/connection-editor/connection-helpers.c:285
+#: src/connection-editor/connection-helpers.c:333
 #: src/connection-editor/page-proxy.c:108
 #: src/connection-editor/page-team-port.c:193
-#: src/connection-editor/page-team.c:331
+#: src/connection-editor/page-team.c:330
 msgid "_Open"
 msgstr ""
 
-#: src/connection-editor/connection-helpers.c:316
+#: src/connection-editor/connection-helpers.c:364
 msgid "Hardware"
 msgstr "வன்பொருள்"
 
-#: src/connection-editor/connection-helpers.c:343
+#: src/connection-editor/connection-helpers.c:391
 msgid "Virtual"
 msgstr "மெய்நிகர்"
 
-#: src/connection-editor/connection-helpers.c:492
-#: src/connection-editor/connection-helpers.c:494
+#: src/connection-editor/connection-helpers.c:540
+#: src/connection-editor/connection-helpers.c:542
 #, fuzzy
 msgid "Import a saved VPN configuration…"
 msgstr "சேமிக்கப்பட்ட ஒரு VPN அமைவாக்கத்தை இறக்கு..."
 
-#: src/connection-editor/connection-helpers.c:524
+#: src/connection-editor/connection-helpers.c:572
 msgid ""
 "The connection editor dialog could not be initialized due to an unknown "
 "error."
 msgstr "தெரியாத பிழையால் இணைப்பு எடிட்டர் உரையாடலை நிறுவ முடியவில்லை."
 
-#: src/connection-editor/connection-helpers.c:533
+#: src/connection-editor/connection-helpers.c:581
 msgid "Could not create new connection"
 msgstr "புதிய இணைப்பை உருவாக்க முடியவில்லை"
 
-#: src/connection-editor/connection-helpers.c:696
+#: src/connection-editor/connection-helpers.c:744
 msgid "Connection delete failed"
 msgstr "இணைப்பை அழிக்க முடியவில்லை"
 
-#: src/connection-editor/connection-helpers.c:744
+#: src/connection-editor/connection-helpers.c:792
 #, c-format
 msgid "Are you sure you wish to delete the connection %s?"
 msgstr " %s இணைப்பை அழிக்க நீங்கள் விரும்புகிறீர்களா?"
@@ -3412,11 +3495,11 @@ msgid ""
 "editor. They will be cleared upon save."
 msgstr ""
 
-#: src/connection-editor/nm-connection-editor.c:749
+#: src/connection-editor/nm-connection-editor.c:751
 msgid "Error initializing editor"
 msgstr "பிழையை நிறுவும் எடிட்டர்"
 
-#: src/connection-editor/nm-connection-editor.c:1159
+#: src/connection-editor/nm-connection-editor.c:1176
 msgid "Connection add failed"
 msgstr "இணைப்பை சேர்க்க முடியவில்லை"
 
@@ -3548,46 +3631,46 @@ msgstr "தேர்ந்தெடுக்கப்பட்ட இணைப�
 msgid "Authenticate to delete the selected connection"
 msgstr "தேர்ந்தெடுக்கப்பட்ட இணைப்பை அழிக்க அங்கீகாரம்"
 
-#: src/connection-editor/nm-connection-list.c:1053
+#: src/connection-editor/nm-connection-list.c:1051
 #, fuzzy
 msgid "Unrecognized connection type"
 msgstr "துணைபுரியாத மொபைல் பிராட்பேண்டை இணைப்பு வகை. முடியவில்லை."
 
-#: src/connection-editor/nm-connection-list.c:1058
+#: src/connection-editor/nm-connection-list.c:1057
 #, fuzzy, c-format
 msgid "Don’t know how to import “%s” connections"
 msgstr "'%s' இணைப்பை உருவாக்குவது எப்படி என்று தெரியவில்லை"
 
-#: src/connection-editor/nm-connection-list.c:1062
+#: src/connection-editor/nm-connection-list.c:1061
 #, fuzzy
 msgid "Error importing connection"
 msgstr "இணைப்பை திருத்தும்போது பிழை"
 
-#: src/connection-editor/nm-connection-list.c:1069
-#: src/connection-editor/nm-connection-list.c:1084
-#: src/connection-editor/nm-connection-list.c:1087
+#: src/connection-editor/nm-connection-list.c:1077
+#: src/connection-editor/nm-connection-list.c:1092
+#: src/connection-editor/nm-connection-list.c:1095
 msgid "Error creating connection"
 msgstr "இணைப்பை உருவாக்குவதில் பிழை."
 
-#: src/connection-editor/nm-connection-list.c:1069
+#: src/connection-editor/nm-connection-list.c:1077
 #, fuzzy
 msgid "Connection type not specified."
 msgstr "இணைப்பை சேர்க்க முடியவில்லை"
 
-#: src/connection-editor/nm-connection-list.c:1085
+#: src/connection-editor/nm-connection-list.c:1093
 msgid "No VPN plugins are installed."
 msgstr ""
 
-#: src/connection-editor/nm-connection-list.c:1088
+#: src/connection-editor/nm-connection-list.c:1096
 #, fuzzy, c-format
 msgid "Don’t know how to create “%s” connections"
 msgstr "'%s' இணைப்பை உருவாக்குவது எப்படி என்று தெரியவில்லை"
 
-#: src/connection-editor/nm-connection-list.c:1122
+#: src/connection-editor/nm-connection-list.c:1130
 msgid "Error editing connection"
 msgstr "இணைப்பை திருத்தும்போது பிழை"
 
-#: src/connection-editor/nm-connection-list.c:1123
+#: src/connection-editor/nm-connection-list.c:1131
 #, fuzzy, c-format
 msgid "Did not find a connection with UUID “%s”"
 msgstr " UUID '%s' உடன் இணைப்பை காணவில்லை."
@@ -3918,24 +4001,24 @@ msgstr "DSL பயனர் இடைமுகத்தை ஏற்ற மு�
 msgid "MACSEC connection %d"
 msgstr "DSL இணைப்பு %d"
 
-#: src/connection-editor/page-master.c:221
-#: src/connection-editor/page-master.c:232
+#: src/connection-editor/page-controller.c:221
+#: src/connection-editor/page-controller.c:232
 msgid "Duplicate ports"
 msgstr ""
 
-#: src/connection-editor/page-master.c:222
+#: src/connection-editor/page-controller.c:222
 #, c-format
 msgid "Ports “%s” and “%s” both apply to device “%s”"
 msgstr ""
 
-#: src/connection-editor/page-master.c:233
+#: src/connection-editor/page-controller.c:233
 #, c-format
 msgid ""
 "Ports “%s” and “%s” apply to different virtual ports (“%s” and “%s”) of the "
 "same physical device."
 msgstr ""
 
-#: src/connection-editor/page-master.c:357
+#: src/connection-editor/page-controller.c:357
 #, c-format
 msgid "%s port %d"
 msgstr ""
@@ -4029,7 +4112,7 @@ msgid "Could not load proxy user interface."
 msgstr "பிணைப்பு பயனர் இடைமுகத்தை ஏற்ற முடியவில்லை."
 
 #: src/connection-editor/page-team-port.c:209
-#: src/connection-editor/page-team.c:347
+#: src/connection-editor/page-team.c:346
 msgid "Error: file doesn’t contain a valid JSON configuration"
 msgstr ""
 
@@ -4045,12 +4128,12 @@ msgstr ""
 msgid "Could not load team port user interface."
 msgstr "ஒயர்டு பயனர் இடைமுகத்தை ஏற்ற முடியவில்லை."
 
-#: src/connection-editor/page-team.c:1017
+#: src/connection-editor/page-team.c:1016
 #, fuzzy
 msgid "Could not load team user interface."
 msgstr "ஒயர்டு பயனர் இடைமுகத்தை ஏற்ற முடியவில்லை."
 
-#: src/connection-editor/page-team.c:1114
+#: src/connection-editor/page-team.c:1113
 #, fuzzy, c-format
 msgid "Team connection %d"
 msgstr "ஒயர்டு இணைப்பு %d"
@@ -4092,25 +4175,25 @@ msgstr "VPN கூடுதல் இணைப்பு சேவை '%s'கா�
 msgid "unknown failure"
 msgstr "இணைப்பை சேர்க்க முடியவில்லை"
 
-#: src/connection-editor/page-vpn.c:88
+#: src/connection-editor/page-vpn.c:94
 msgid "Could not load VPN user interface."
 msgstr "VPN பயனர் இடைமுகத்தை ஏற்ற முடியவில்லை."
 
-#: src/connection-editor/page-vpn.c:103
+#: src/connection-editor/page-vpn.c:109
 #, fuzzy, c-format
 msgid "Could not find VPN plugin for “%s”."
 msgstr "VPN கூடுதல் இணைப்பு சேவை '%s'காக தேட முடியவில்லை."
 
-#: src/connection-editor/page-vpn.c:185
+#: src/connection-editor/page-vpn.c:191
 #, c-format
 msgid "VPN connection %d"
 msgstr "VPN இணைப்பு %d"
 
-#: src/connection-editor/page-vpn.c:191
+#: src/connection-editor/page-vpn.c:197
 msgid "Choose a VPN Connection Type"
 msgstr "VPN இணைப்பு வகை ஒன்றை தேர்ந்தெடுக்கவும்"
 
-#: src/connection-editor/page-vpn.c:192
+#: src/connection-editor/page-vpn.c:198
 #, fuzzy
 msgid ""
 "Select the type of VPN you wish to use for the new connection. If the type "
@@ -4121,55 +4204,58 @@ msgstr ""
 "உருவாக்க விரும்பும் VPN இணைப்பு வகை பட்டியலில் தெரியவில்லை எனில், நீங்கள் சரியான VPN "
 "சொருகியை நிறுவவில்லை."
 
-#: src/connection-editor/page-wifi-security.c:346
+#: src/connection-editor/page-wifi-security.c:359
 msgid "WEP 40/128-bit Key (Hex or ASCII)"
 msgstr "WEP 40/128-பிட் விசை (ஹெக்ஸ் அல்லது ஆஸ்கி)"
 
-#: src/connection-editor/page-wifi-security.c:356
+#: src/connection-editor/page-wifi-security.c:372
 msgid "WEP 128-bit Passphrase"
 msgstr "WEP 128-பிட் கடவுச்சொல்"
 
-#: src/connection-editor/page-wifi-security.c:382
+#: src/connection-editor/page-wifi-security.c:397
 msgid "Dynamic WEP (802.1X)"
 msgstr "மாறும் WEP (802.1X)"
 
-#: src/connection-editor/page-wifi-security.c:395
-msgid "WPA & WPA2 Personal"
+#: src/connection-editor/page-wifi-security.c:410
+#, fuzzy
+msgid "WPA/WPA2/WPA3 Personal"
 msgstr "WPA & WPA2 தனிப்பட்ட"
 
-#: src/connection-editor/page-wifi-security.c:408
-msgid "WPA & WPA2 Enterprise"
+#: src/connection-editor/page-wifi-security.c:423
+#, fuzzy
+msgid "WPA/WPA2 Enterprise"
 msgstr "WPA & WPA2 கடவுச்சொல்"
 
-#: src/connection-editor/page-wifi-security.c:421
+#: src/connection-editor/page-wifi-security.c:436
 #, fuzzy
 msgid "WPA3 Personal"
 msgstr "WPA & WPA2 தனிப்பட்ட"
 
-#: src/connection-editor/page-wifi-security.c:431
+#: src/connection-editor/page-wifi-security.c:449
+#: src/connection-editor/page-wifi-security.c:457
 msgid "Enhanced Open"
 msgstr ""
 
-#: src/connection-editor/page-wifi-security.c:476
+#: src/connection-editor/page-wifi-security.c:503
 #, fuzzy
 msgid "Could not load Wi-Fi security user interface; missing Wi-Fi setting."
 msgstr "Wi-Fi பாதுகாப்பு பயனர் இடைமுகத்தை ஏற்ற முடியவில்லை; விடுபட்ட Wi-Fi அமைவுகள்."
 
-#: src/connection-editor/page-wifi-security.c:487
+#: src/connection-editor/page-wifi-security.c:514
 #, fuzzy
 msgid "Wi-Fi Security"
 msgstr "ஒயர்லெஸ் பாதுகாப்பு"
 
-#: src/connection-editor/page-wifi-security.c:489
+#: src/connection-editor/page-wifi-security.c:516
 #, fuzzy
 msgid "Could not load Wi-Fi security user interface."
 msgstr "Wi-Fi பாதுகாப்பு பயனர் இடைமுகத்தை ஏற்ற முடியவில்லை."
 
-#: src/connection-editor/page-wifi-security.c:570
+#: src/connection-editor/page-wifi-security.c:597
 msgid "missing SSID"
 msgstr ""
 
-#: src/connection-editor/page-wifi-security.c:576
+#: src/connection-editor/page-wifi-security.c:603
 msgid "Security not compatible with Ad-Hoc mode"
 msgstr ""
 
@@ -4424,6 +4510,23 @@ msgstr "DER அல்லது PEM சான்றிதழ்கள் (*.der, 
 msgid "DER, PEM, or PKCS#12 private keys (*.der, *.pem, *.p12, *.key)"
 msgstr "DER, PEM, or PKCS#12 தனிப்பட்ட விசைகள் (*.der, *.pem, *.p12)"
 
+#~ msgid "mW"
+#~ msgstr "mW"
+
+#, fuzzy
+#~ msgid "Transmission po_wer"
+#~ msgstr "மாற்றப்படும் பவர் (_w):"
+
+#~ msgid "Mb/s"
+#~ msgstr "Mb/s"
+
+#, fuzzy
+#~ msgid "_Rate"
+#~ msgstr "விகிதம்: (_R)"
+
+#~ msgid "More networks"
+#~ msgstr "நிறைய பிணையங்கள்"
+
 #~ msgid "GTC"
 #~ msgstr "GTC"
 
@@ -4538,68 +4641,6 @@ msgstr "DER, PEM, or PKCS#12 தனிப்பட்ட விசைகள் (
 #, fuzzy
 #~ msgid "WEP inde_x"
 #~ msgstr "WEP அட்டவணை (_x):"
-
-#~ msgid "Disable connected notifications"
-#~ msgstr "செயல்படுத்தாத இணைக்கப்பட்ட அறிவிப்புகள்"
-
-#, fuzzy
-#~ msgid ""
-#~ "Set this to true to disable notifications when connecting to a network."
-#~ msgstr ""
-#~ "Set this to TRUE to disable notifications when connecting to a network."
-
-#~ msgid "Disable disconnected notifications"
-#~ msgstr "செயல்படுத்தாத இணைக்கப்படாத அறிவிப்புகள்"
-
-#, fuzzy
-#~ msgid ""
-#~ "Set this to true to disable notifications when disconnecting from a "
-#~ "network."
-#~ msgstr ""
-#~ "Set this to TRUE to disable notifications when disconnecting from a "
-#~ "network."
-
-#, fuzzy
-#~ msgid "Disable VPN notifications"
-#~ msgstr "செயல்படுத்தாத இணைக்கப்பட்ட அறிவிப்புகள்"
-
-#, fuzzy
-#~ msgid ""
-#~ "Set this to true to disable notifications when connecting to or "
-#~ "disconnecting from a VPN."
-#~ msgstr ""
-#~ "Set this to TRUE to disable notifications when disconnecting from a "
-#~ "network."
-
-#~ msgid "Suppress networks available notifications"
-#~ msgstr "கிடைக்கக்கூடிய அறிவிப்புகளின் பிணையத்தை குறைக்கிறது"
-
-#, fuzzy
-#~ msgid ""
-#~ "Set this to true to disable notifications when Wi-Fi networks are "
-#~ "available."
-#~ msgstr ""
-#~ "Set this to TRUE to disable notifications when wireless networks are "
-#~ "available."
-
-#~ msgid "Stamp"
-#~ msgstr "முத்திரை"
-
-#~ msgid ""
-#~ "Used to determine whether settings should be migrated to a new version."
-#~ msgstr ""
-#~ "Used to determine whether settings should be migrated to a new version."
-
-#, fuzzy
-#~ msgid "Disable WiFi Create"
-#~ msgstr "செயல்நீக்க Wi-Fiஐ உருவாக்கு"
-
-#, fuzzy
-#~ msgid ""
-#~ "Set to true to disable creation of adhoc networks when using the applet."
-#~ msgstr ""
-#~ "அப்லெட்டைப் பயன்படுத்தும் போது சரி என்பதற்கு செயல்நீக்க உருவாக்கமான  adhoc பிணையங்களை "
-#~ "அமைக்கவும்."
 
 #, fuzzy
 #~ msgid "Ignore CA certificate"
@@ -5148,9 +5189,6 @@ msgstr "DER, PEM, or PKCS#12 தனிப்பட்ட விசைகள் (
 
 #~ msgid "_Save..."
 #~ msgstr "_S சேமிக்கவும்..."
-
-#~ msgid "A_vailable to all users"
-#~ msgstr "அனைத்து பயனர்களுக்கும் கிடைக்கப் பெறும"
 
 #~ msgid "Error saving connection"
 #~ msgstr "இணைப்பு சேமிக்கும் போது பிழை"

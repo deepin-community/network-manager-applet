@@ -60,6 +60,12 @@ finish_setup (CEPageVpn *self, gpointer user_data)
 		g_warning ("Could not load VPN user interface for service '%s'.", priv->service_type);
 		return;
 	}
+
+	gtk_widget_set_margin_top (parent->page, 12);
+	gtk_widget_set_margin_bottom (parent->page, 12);
+	gtk_widget_set_margin_left (parent->page, 12);
+	gtk_widget_set_margin_right (parent->page, 12);
+
 	g_object_ref_sink (parent->page);
 	gtk_widget_show_all (parent->page);
 }
@@ -250,6 +256,7 @@ vpn_connection_new (FUNC_TAG_PAGE_NEW_CONNECTION_IMPL,
 	}
 
 	connection = _ensure_connection_other (connection, &connection_tmp);
+
 	if (detail) {
 		service_type = detail;
 		add_detail_key = vpn_data ? vpn_data->add_detail_key : NULL;
@@ -294,8 +301,14 @@ vpn_connection_new (FUNC_TAG_PAGE_NEW_CONNECTION_IMPL,
 		if (!service_type)
 			service_type = detail;
 
-		s_vpn = nm_setting_vpn_new ();
-		g_object_set (s_vpn, NM_SETTING_VPN_SERVICE_TYPE, service_type, NULL);
+		s_vpn = NM_SETTING (nm_connection_get_setting_vpn (connection));
+		if (!s_vpn)
+			s_vpn = nm_setting_vpn_new ();
+		else
+			g_object_ref (s_vpn);
+
+		if (!nm_setting_vpn_get_service_type (NM_SETTING_VPN(s_vpn)))
+			g_object_set (s_vpn, NM_SETTING_VPN_SERVICE_TYPE, service_type, NULL);
 
 		if (add_detail_key)
 			nm_setting_vpn_add_data_item ((NMSettingVpn *) s_vpn, add_detail_key, add_detail_val);

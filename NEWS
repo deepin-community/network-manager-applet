@@ -1,4 +1,76 @@
 =======================================================
+network-manager-applet-1.34.0
+Overview of changes since network-manager-applet-1.32.0
+=======================================================
+
+* Fix crash when importing WireGuard connections.
+* Fix ineffective "Don't show message again" button in notifications.
+* Drop build dependency on gudev.
+* Add setting to suppress broadband unlock prompt.
+* Replace occurrences of "master", "slave" and "blacklist".
+* Update translations.
+
+=======================================================
+network-manager-applet-1.32.0
+Overview of changes since network-manager-applet-1.30.0
+=======================================================
+
+* Allow using MTU larger than 10000 octets.
+* Prefer using AppIndicator outside X11.
+* Added support for importing WireGuard profiles from wg-quick files.
+* Added Interlingue translation.
+* Updated Basque, Catalan, Croatian, Danish, Georgian, German, Indonesian,
+  Lithuanian, Polish, Portuguese, Moscoviyan, Slovenian, Swedish, Turkish
+  and Ukrainian translations. translations.
+
+=======================================================
+network-manager-applet-1.30.0
+Overview of changes since network-manager-applet-1.28.0
+=======================================================
+
+* Dropped libnotify dependency, replaced with GNotification.
+* Clarifications and fixes in the Wi-Fi page.
+* Add Georgian translation.
+* Update Brazilian Portuguese, Catalan, Croatian, Danish, German,
+  Hebrew, Indonesian, Japanese, Polish, Portuguese, Serbian,
+  Slovenian, Spanish Swedish, Turkish and Ukrainian translations.
+
+=======================================================
+network-manager-applet-1.28.0
+Overview of changes since network-manager-applet-1.26.0
+=======================================================
+
+* Use correct font size for headings in order to make lives of HiDPI a
+  little less miserable.
+* Updates to Basque, Brazilian Portuguese, Chinese, Danish, Dutch,
+  French, German, Hungarian, Norwegian Bokmål and Polish translations.
+
+=======================================================
+network-manager-applet-1.26.0
+Overview of changes since network-manager-applet-1.24.0
+=======================================================
+
+* Improve error messages and error dialogs.
+* Improve Wi-Fi security combo error handling.
+* Stop providing WEP by default.
+* Replace the lock icon for WEP networks with an exclamation
+  mark.
+* Fix meson 0.61 issues.
+* Make the tooltip of the status icon available for
+  screen readers.
+* Fix OWE wireless security option not showed
+  on "Connect to a Hidden Network" dialog.
+* Fix OWE wireless security option not being saved
+  when chosen from nm-connection-editor.
+* Move 802.1 dialog margins for the inner vbox.
+* Align labels for Ethernet dialog.
+* Move all Wi-FI entries to a submenu.
+* Fix the VPN plugins dialog margins.
+* Add a scrolled window for the VPN page.
+* Internal improvements.
+* Update translations.
+
+=======================================================
 network-manager-applet-1.24.0
 Overview of changes since network-manager-applet-1.22.0
 =======================================================
