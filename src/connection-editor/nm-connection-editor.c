@@ -606,26 +606,26 @@ nm_connection_editor_get (NMConnection *connection)
 
 /* Returns an editor for @port's controller, if any */
 NMConnectionEditor *
-nm_connection_editor_get_master (NMConnection *port)
+nm_connection_editor_get_controller (NMConnection *port)
 {
 	GHashTableIter iter;
 	gpointer connection, editor;
 	NMSettingConnection *s_con;
-	const char *master;
+	const char *controller;
 
 	if (!active_editors)
 		return NULL;
 
 	s_con = nm_connection_get_setting_connection (port);
-	master = nm_setting_connection_get_master (s_con);
-	if (!master)
+	controller = nm_setting_connection_get_master (s_con);
+	if (!controller)
 		return NULL;
 
 	g_hash_table_iter_init (&iter, active_editors);
 	while (g_hash_table_iter_next (&iter, &connection, &editor)) {
-		if (!g_strcmp0 (master, nm_connection_get_uuid (connection)))
+		if (!g_strcmp0 (controller, nm_connection_get_uuid (connection)))
 			return editor;
-		if (!g_strcmp0 (master, nm_connection_get_interface_name (connection)))
+		if (!g_strcmp0 (controller, nm_connection_get_interface_name (connection)))
 			return editor;
 	}
 
@@ -736,8 +736,10 @@ static void
 page_initialized (CEPage *page, GError *error, gpointer user_data)
 {
 	NMConnectionEditor *editor = NM_CONNECTION_EDITOR (user_data);
-	GtkWidget *widget, *parent;
 	GtkNotebook *notebook;
+	GtkWidget *parent;
+	GtkWidget *scrolled;
+	GtkWidget *widget;
 	GtkWidget *label;
 	GList *children, *iter;
 	gpointer order, child_order;
@@ -755,10 +757,28 @@ page_initialized (CEPage *page, GError *error, gpointer user_data)
 	/* Add the page to the UI */
 	notebook = GTK_NOTEBOOK (gtk_builder_get_object (editor->builder, "notebook"));
 	label = gtk_label_new (ce_page_get_title (page));
+
 	widget = ce_page_get_page (page);
 	parent = gtk_widget_get_parent (widget);
 	if (parent)
 		gtk_container_remove (GTK_CONTAINER (parent), widget);
+
+	if (CE_IS_PAGE_VPN (page)) {
+		if (ce_page_vpn_can_export (CE_PAGE_VPN (page)))
+			gtk_widget_show (editor->export_button);
+
+		scrolled = gtk_scrolled_window_new (NULL, NULL);
+		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+		gtk_container_add (GTK_CONTAINER (scrolled), widget);
+		gtk_widget_show (scrolled);
+		widget = scrolled;
+
+#if GTK_CHECK_VERSION(3,22,0)
+		NM_LIBNM_COMPAT_UNDEPRECATE (
+			gtk_scrolled_window_set_propagate_natural_height (GTK_SCROLLED_WINDOW (scrolled),
+									  TRUE));
+#endif
+	}
 
 	order = g_object_get_data (G_OBJECT (page), ORDER_TAG);
 	g_object_set_data (G_OBJECT (widget), ORDER_TAG, order);
@@ -772,9 +792,6 @@ page_initialized (CEPage *page, GError *error, gpointer user_data)
 	g_list_free (children);
 
 	gtk_notebook_insert_page (notebook, widget, label, i);
-
-	if (CE_IS_PAGE_VPN (page) && ce_page_vpn_can_export (CE_PAGE_VPN (page)))
-		gtk_widget_show (editor->export_button);
 
 	/* Move the page from the initializing list to the main page list */
 	editor->initializing_pages = g_slist_remove (editor->initializing_pages, page);
@@ -951,7 +968,7 @@ nm_connection_editor_set_connection (NMConnectionEditor *editor,
 {
 	NMSettingConnection *s_con;
 	const char *connection_type;
-	const char *slave_type;
+	const char *port_type;
 	gboolean success = FALSE;
 	GSList *iter, *copy;
 
@@ -1045,11 +1062,11 @@ nm_connection_editor_set_connection (NMConnectionEditor *editor,
 		g_warning ("Unhandled setting type '%s'", connection_type);
 	}
 
-	slave_type = nm_setting_connection_get_slave_type (s_con);
-	if (!g_strcmp0 (slave_type, NM_SETTING_TEAM_SETTING_NAME)) {
+	port_type = nm_setting_connection_get_slave_type (s_con);
+	if (!g_strcmp0 (port_type, NM_SETTING_TEAM_SETTING_NAME)) {
 		if (!add_page (editor, ce_page_team_port_new, editor->connection, error))
 			goto out;
-	} else if (!g_strcmp0 (slave_type, NM_SETTING_BRIDGE_SETTING_NAME)) {
+	} else if (!g_strcmp0 (port_type, NM_SETTING_BRIDGE_SETTING_NAME)) {
 		if (!add_page (editor, ce_page_bridge_port_new, editor->connection, error))
 			goto out;
 	}

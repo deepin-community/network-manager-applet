@@ -21,9 +21,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-applet\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/network-manager-"
-"applet/\n"
-"POT-Creation-Date: 2021-08-17 10:12+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/network-manager-applet/"
+"issues\n"
+"POT-Creation-Date: 2023-10-04 18:29+0200\n"
 "PO-Revision-Date: 2020-03-02 16:09+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
@@ -33,9 +33,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: nm-applet.desktop.in:3 src/applet-dialogs.c:724 src/applet.c:3258
-msgid "Network"
-msgstr "네트워크"
+#: nm-applet.desktop.in:3 src/applet.c:3280
+msgid "NetworkManager Applet"
+msgstr "네트워크 관리 애플릿"
 
 #: nm-applet.desktop.in:4
 msgid "Manage your network connections"
@@ -77,6 +77,77 @@ msgstr "사용 중인 네트워크 연결"
 msgid "Manage and change your network connection settings"
 msgstr "네트워크 연결 설정을 관리하고 설정을 바꿉니다"
 
+#: org.gnome.nm-applet.gschema.xml.in:6
+msgid "Disable connected notifications"
+msgstr "연결이 되면 알려주지 않음"
+
+#: org.gnome.nm-applet.gschema.xml.in:7
+msgid "Set this to true to disable notifications when connecting to a network."
+msgstr "참이면 네트워크에 연결되었을 때 알려주지 않습니다."
+
+#: org.gnome.nm-applet.gschema.xml.in:11
+msgid "Disable disconnected notifications"
+msgstr "연결이 끊기면 알려주지 않음"
+
+#: org.gnome.nm-applet.gschema.xml.in:12
+msgid ""
+"Set this to true to disable notifications when disconnecting from a network."
+msgstr "참이면 네트워크가 끊어졌을 때 알려주지 않습니다."
+
+#: org.gnome.nm-applet.gschema.xml.in:16
+msgid "Disable VPN notifications"
+msgstr "가상 사설망 알려주지 않음"
+
+#: org.gnome.nm-applet.gschema.xml.in:17
+msgid ""
+"Set this to true to disable notifications when connecting to or "
+"disconnecting from a VPN."
+msgstr "참이면 가상 사설망에 연결하거나 연결이 끊어졌을 때 알려주지 않습니다."
+
+#: org.gnome.nm-applet.gschema.xml.in:21
+msgid "Suppress networks available notifications"
+msgstr "네트워크에서 사용 가능한 통지를 무시합니다"
+
+#: org.gnome.nm-applet.gschema.xml.in:22
+msgid ""
+"Set this to true to disable notifications when Wi-Fi networks are available."
+msgstr "참이면 와이파이 네트워크가 사용 가능할 때 알려주지 않습니다."
+
+#: org.gnome.nm-applet.gschema.xml.in:26
+msgid "Stamp"
+msgstr "스탬프"
+
+#: org.gnome.nm-applet.gschema.xml.in:27
+msgid "Used to determine whether settings should be migrated to a new version."
+msgstr "설정을 새로운 버전으로 옮겨야 할지를 결정하려고 사용합니다."
+
+#: org.gnome.nm-applet.gschema.xml.in:31
+msgid "Disable WiFi Create"
+msgstr "와이파이 만들기 사용하지 않음"
+
+#: org.gnome.nm-applet.gschema.xml.in:32
+msgid ""
+"Set to true to disable creation of adhoc networks when using the applet."
+msgstr "참이면 애플릿 사용할 때 애드혹 네트워크를 만들지 않습니다."
+
+#: org.gnome.nm-applet.gschema.xml.in:36
+msgid "Suppress broadband device unlock prompt"
+msgstr ""
+
+#: org.gnome.nm-applet.gschema.xml.in:37
+msgid ""
+"Set to true to not prompt for PIN/PUK when providing it is required to "
+"unlock a broadband device."
+msgstr ""
+
+#: org.gnome.nm-applet.gschema.xml.in:41
+msgid "Show the applet in notification area"
+msgstr "알림 영역에 애플릿 표시"
+
+#: org.gnome.nm-applet.gschema.xml.in:42
+msgid "Set to FALSE to disable displaying the applet in the notification area."
+msgstr "거짓으로 설정하면 알림 영역에 애플릿 표시를 하지 않습니다."
+
 #: shared/nm-utils/nm-shared-utils.c:793
 #, c-format
 msgid "object class '%s' has no property named '%s'"
@@ -110,7 +181,7 @@ msgid ""
 "type '%s'"
 msgstr ""
 
-#: src/8021x.ui:11 src/ethernet-dialog.c:87
+#: src/8021x.ui:7 src/ethernet-dialog.c:90
 msgid "802.1X authentication"
 msgstr "802.1X 인증"
 
@@ -122,14 +193,14 @@ msgstr "802.1X 인증"
 #: src/connection-editor/ce-page-dcb.ui:1019
 #: src/connection-editor/ce-page-wireguard.ui:41
 #: src/connection-editor/ce-ppp-auth-methods.ui:28
-#: src/connection-editor/connection-helpers.c:284
-#: src/connection-editor/connection-helpers.c:747
+#: src/connection-editor/connection-helpers.c:332
+#: src/connection-editor/connection-helpers.c:795
 #: src/connection-editor/nm-connection-editor.ui:197
 #: src/connection-editor/page-bluetooth.c:293
 #: src/connection-editor/page-mobile.c:530
 #: src/connection-editor/page-proxy.c:107
 #: src/connection-editor/page-team-port.c:192
-#: src/connection-editor/page-team.c:330
+#: src/connection-editor/page-team.c:329
 #: src/connection-editor/vpn-helpers.c:198 src/gsm-unlock.ui:28
 #: src/mobile-helpers.c:451
 msgid "_Cancel"
@@ -145,13 +216,17 @@ msgstr "연결"
 msgid "_Network name"
 msgstr "네트워크 이름(_N):"
 
-#: src/ap-menu-item.c:67
+#: src/ap-menu-item.c:68
 #, fuzzy
 msgid "ad-hoc"
 msgstr "애드혹"
 
-#: src/ap-menu-item.c:72
+#: src/ap-menu-item.c:73
 msgid "secure."
+msgstr ""
+
+#: src/ap-menu-item.c:77
+msgid "insecure."
 msgstr ""
 
 #: src/applet-device-broadband.c:147
@@ -168,46 +243,46 @@ msgstr "잘못된 PIN 코드. 서비스 업체에 문의하십시오."
 msgid "Sending unlock code…"
 msgstr "언락 코드를 보내는 중..."
 
-#: src/applet-device-broadband.c:725 src/applet-dialogs.c:521
+#: src/applet-device-broadband.c:729 src/applet-dialogs.c:521
 #, c-format
 msgid "Mobile Broadband (%s)"
 msgstr "모바일 광대역(%s)"
 
-#: src/applet-device-broadband.c:727
+#: src/applet-device-broadband.c:731
 #: src/connection-editor/connection-helpers.c:95
 #: src/connection-editor/page-mobile.c:295
 msgid "Mobile Broadband"
 msgstr "모바일 광대역"
 
-#: src/applet-device-broadband.c:780 src/applet-device-bt.c:61
-#: src/applet-device-ethernet.c:107 src/applet-device-wifi.c:894
+#: src/applet-device-broadband.c:784 src/applet-device-bt.c:61
+#: src/applet-device-ethernet.c:107
 msgid "Available"
 msgstr "사용 가능"
 
 #. Default connection item
-#: src/applet-device-broadband.c:793
+#: src/applet-device-broadband.c:797
 #, fuzzy
 msgid "New Mobile Broadband connection…"
 msgstr "새 모바일 광대역 연결"
 
-#: src/applet-device-broadband.c:809 src/applet-device-bt.c:75
-#: src/applet-device-ethernet.c:124 src/applet-device-wifi.c:1297
+#: src/applet-device-broadband.c:813 src/applet-device-bt.c:75
+#: src/applet-device-ethernet.c:124 src/applet-device-wifi.c:1251
 msgid "Connection Established"
 msgstr "연결됨"
 
-#: src/applet-device-broadband.c:810
+#: src/applet-device-broadband.c:814
 msgid "You are now connected to the Mobile Broadband network."
 msgstr "모바일 광대역 네트워크에 연결되었습니다."
 
-#: src/applet-device-broadband.c:950 src/applet-device-broadband.c:956
+#: src/applet-device-broadband.c:954 src/applet-device-broadband.c:960
 msgid "Mobile Broadband network."
 msgstr "모바일 광대역 네트워크."
 
-#: src/applet-device-broadband.c:951
+#: src/applet-device-broadband.c:955
 msgid "You are now registered on the home network."
 msgstr "홈 네트워크에 등록되었습니다."
 
-#: src/applet-device-broadband.c:957
+#: src/applet-device-broadband.c:961
 msgid "You are now registered on a roaming network."
 msgstr "로밍 네트워크에 등록되었습니다."
 
@@ -230,7 +305,7 @@ msgstr "모바일 광대역 연결 '%s' 설정 중..."
 msgid "User authentication required for mobile broadband connection “%s”…"
 msgstr "모바일 광대역 연결 '%s'에는 사용자 인증이 필요합니다..."
 
-#: src/applet-device-bt.c:113 src/applet.c:2604 src/mobile-helpers.c:593
+#: src/applet-device-bt.c:113 src/applet.c:2510 src/mobile-helpers.c:593
 #, fuzzy, c-format
 msgid "Requesting a network address for “%s”…"
 msgstr "'%s'에 네트워크 주소 요청중..."
@@ -263,7 +338,7 @@ msgid "Ethernet Network"
 msgstr "이더넷 네트워크"
 
 #. Notify user of unmanaged or unavailable device
-#: src/applet-device-ethernet.c:99 src/applet.c:1359
+#: src/applet-device-ethernet.c:99 src/applet.c:1265
 msgid "disconnected"
 msgstr "연결 끊김"
 
@@ -325,7 +400,7 @@ msgstr "새 와이파이 네트워크 만들기"
 msgid "(none)"
 msgstr "(없음)"
 
-#: src/applet-device-wifi.c:523 src/applet-device-wifi.c:1397
+#: src/applet-device-wifi.c:523 src/applet-device-wifi.c:1349
 msgid "Failed to add new connection"
 msgstr "새로운 연결을 추가하는데 실패"
 
@@ -333,92 +408,88 @@ msgstr "새로운 연결을 추가하는데 실패"
 msgid "Insufficient privileges."
 msgstr ""
 
-#: src/applet-device-wifi.c:526 src/applet-device-wifi.c:1379
-#: src/applet-device-wifi.c:1402 src/applet.c:417 src/applet.c:506
+#: src/applet-device-wifi.c:526 src/applet-device-wifi.c:1332
+#: src/applet-device-wifi.c:1352 src/applet.c:414 src/applet.c:497
 msgid "Connection failure"
 msgstr "연결에 실패"
 
-#: src/applet-device-wifi.c:826
+#: src/applet-device-wifi.c:827
 #, c-format
 msgid "Wi-Fi Networks (%s)"
 msgstr "와이파이 네트워크(%s)"
 
-#: src/applet-device-wifi.c:828
+#: src/applet-device-wifi.c:829
 #, c-format
 msgid "Wi-Fi Network (%s)"
 msgstr "와이파이 네트워크(%s)"
 
-#: src/applet-device-wifi.c:830
+#: src/applet-device-wifi.c:831
 msgid "Wi-Fi Network"
 msgid_plural "Wi-Fi Networks"
 msgstr[0] "와이파이 네트워크"
 
-#: src/applet-device-wifi.c:859
+#: src/applet-device-wifi.c:860
 msgid "Wi-Fi is disabled"
 msgstr "와이파이를 사용하지 않습니다"
 
-#: src/applet-device-wifi.c:860
+#: src/applet-device-wifi.c:861
 msgid "Wi-Fi is disabled by hardware switch"
 msgstr "와이파이가 하드웨어 스위치를 통해 사용하지 않습니다"
 
-#: src/applet-device-wifi.c:921
-msgid "More networks"
-msgstr "다른 네트워크"
+#: src/applet-device-wifi.c:887
+#, fuzzy
+msgid "_Available networks"
+msgstr "사용 가능"
 
-#: src/applet-device-wifi.c:1111
+#: src/applet-device-wifi.c:1066
 msgid "Wi-Fi Networks Available"
 msgstr "와이파이 네트워크가 사용 가능합니다"
 
-#: src/applet-device-wifi.c:1112
+#: src/applet-device-wifi.c:1067
 msgid "Use the network menu to connect to a Wi-Fi network"
 msgstr "네트워크 메뉴에서 와이파이 네트워크에 연결할 수 있습니다"
 
-#: src/applet-device-wifi.c:1115 src/applet.c:828
-#, fuzzy
-msgid "Don’t show this message again"
-msgstr "다시 보지 않기"
-
-#: src/applet-device-wifi.c:1296
+#: src/applet-device-wifi.c:1249
 #, fuzzy, c-format
 msgid "You are now connected to the Wi-Fi network “%s”."
 msgstr "와이파이 네트워크 '%s'에 연결되었습니다."
 
-#: src/applet-device-wifi.c:1331
+#: src/applet-device-wifi.c:1286
 #, fuzzy, c-format
 msgid "Preparing Wi-Fi network connection “%s”…"
 msgstr "와이파이 네트워크 '%s' 연결 준비 중..."
 
-#: src/applet-device-wifi.c:1334
+#: src/applet-device-wifi.c:1289
 #, fuzzy, c-format
 msgid "Configuring Wi-Fi network connection “%s”…"
 msgstr "와이파이 네트워크 '%s' 연결 설정 중..."
 
-#: src/applet-device-wifi.c:1337
+#: src/applet-device-wifi.c:1292
 #, fuzzy, c-format
 msgid "User authentication required for Wi-Fi network “%s”…"
 msgstr "와이파이 네트워크 연결 '%s'에 사용자 인증이 필요합니다..."
 
-#: src/applet-device-wifi.c:1340
+#: src/applet-device-wifi.c:1295
 #, fuzzy, c-format
 msgid "Requesting a Wi-Fi network address for “%s”…"
 msgstr "'%s'에 대한 와이파이 네트워크 주소 요청 중..."
 
-#: src/applet-device-wifi.c:1351
+#: src/applet-device-wifi.c:1306
 #, fuzzy, c-format
 msgid "Wi-Fi network connection “%s” active: %s (%d%%)"
 msgstr "와이파이 네트워크 연결 '%s' 사용 중: %s (%d%%)"
 
-#: src/applet-device-wifi.c:1355
+#: src/applet-device-wifi.c:1310
 #, fuzzy, c-format
 msgid "Wi-Fi network connection “%s” active"
 msgstr "와이파이 네트워크 연결 '%s' 사용 중"
 
-#: src/applet-device-wifi.c:1374
+#: src/applet-device-wifi.c:1329
 msgid "Failed to activate connection"
 msgstr "연결 활성화하는 데 실패"
 
-#: src/applet-device-wifi.c:1376 src/applet-device-wifi.c:1399 src/applet.c:414
-#: src/applet.c:468 src/applet.c:503
+#: src/applet-device-wifi.c:1330 src/applet-device-wifi.c:1350 src/applet.c:412
+#: src/applet.c:463 src/applet.c:495
 msgid "Unknown error"
 msgstr "알 수 없는 오류"
 
@@ -426,7 +497,7 @@ msgstr "알 수 없는 오류"
 msgid "Error displaying connection information:"
 msgstr "연결 정보 보이기 오류:"
 
-#: src/applet-dialogs.c:60 src/connection-editor/page-wifi-security.c:369
+#: src/applet-dialogs.c:60 src/connection-editor/page-wifi-security.c:384
 msgid "LEAP"
 msgstr "LEAP"
 
@@ -434,7 +505,7 @@ msgstr "LEAP"
 msgid "Dynamic WEP"
 msgstr "동적 WEP"
 
-#: src/applet-dialogs.c:64 src/applet-dialogs.c:226 src/applet-dialogs.c:228
+#: src/applet-dialogs.c:64 src/applet-dialogs.c:226
 msgid "WPA/WPA2"
 msgstr "WPA/WPA2"
 
@@ -448,12 +519,17 @@ msgstr "주소"
 msgid "WEP"
 msgstr "WEP"
 
+#: src/applet-dialogs.c:228
+#, fuzzy
+msgid "WPA/WPA2/WPA3"
+msgstr "WPA/WPA2"
+
 #: src/applet-dialogs.c:230
 msgid "WPA3"
 msgstr ""
 
 #: src/applet-dialogs.c:234 src/applet-dialogs.c:243
-#: src/connection-editor/page-wifi-security.c:320
+#: src/connection-editor/page-wifi-security.c:327
 msgctxt "Wi-Fi/Ethernet security"
 msgid "None"
 msgstr "없음"
@@ -583,6 +659,10 @@ msgstr "IPv6"
 #: src/applet-dialogs.c:717 src/connection-editor/ce-page-wifi.ui:52
 msgid "Hotspot"
 msgstr ""
+
+#: src/applet-dialogs.c:724 src/applet.c:3166
+msgid "Network"
+msgstr "네트워크"
 
 #: src/applet-dialogs.c:735
 #, fuzzy
@@ -748,23 +828,28 @@ msgstr "DUN 연결을 만들 수 없습니다: %s"
 msgid "Failed to write connection to VPN UI: incomplete write"
 msgstr ""
 
-#: src/applet.c:412
+#: src/applet.c:411
 msgid "Failed to add/activate connection"
 msgstr "연결 추가/활성화하는 데 실패"
 
-#: src/applet.c:466
+#: src/applet.c:462
 msgid "Device disconnect failed"
 msgstr "장치 연결 끊는 데 실패"
 
-#: src/applet.c:471
+#: src/applet.c:465
 msgid "Disconnect failure"
 msgstr "연결 끊는 데 실패"
 
-#: src/applet.c:501
+#: src/applet.c:494
 msgid "Connection activation failed"
 msgstr "연결 활성화 실패"
 
-#: src/applet.c:925
+#: src/applet.c:731
+#, fuzzy
+msgid "Don’t show this message again"
+msgstr "다시 보지 않기"
+
+#: src/applet.c:831
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -774,7 +859,7 @@ msgstr ""
 "\n"
 "'%s' 가상 사설망 연결이 실패했습니다. 네트워크 연결이 중단되었습니다."
 
-#: src/applet.c:927
+#: src/applet.c:833
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -784,7 +869,7 @@ msgstr ""
 "\n"
 "'%s' 가상 사설망 연결이 실패했습니다. 네트워크 연결이 중단되었습니다."
 
-#: src/applet.c:929
+#: src/applet.c:835
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -794,7 +879,7 @@ msgstr ""
 "'%s' 가상 사설망 연결이 실패했습니다. 가상 사설망 서비스가 예기치 못하게 중단"
 "되었습니다."
 
-#: src/applet.c:931
+#: src/applet.c:837
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -805,7 +890,7 @@ msgstr ""
 "'%s' 가상 사설망 연결이 실패했습니다. 가상 사설망 서비스가 잘못된 설정을 반환"
 "했습니다."
 
-#: src/applet.c:933
+#: src/applet.c:839
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -814,7 +899,7 @@ msgstr ""
 "\n"
 "'%s' 가상 사설망 연결이 실패했습니다. 연결 시도가 제한 시간을 초과했습니다."
 
-#: src/applet.c:935
+#: src/applet.c:841
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -824,7 +909,7 @@ msgstr ""
 "'%s' 가상 사설망 연결이 실패했습니다. 가상 사설망 서비스가 제 시간에 시작하"
 "지 못했습니다."
 
-#: src/applet.c:937
+#: src/applet.c:843
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -834,7 +919,7 @@ msgstr ""
 "'%s' 가상 사설망 연결이 실패했습니다. 가상 사설망 서비스를 시작하는데 실패했"
 "습니다."
 
-#: src/applet.c:939
+#: src/applet.c:845
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -843,7 +928,7 @@ msgstr ""
 "\n"
 "'%s' 가상 사설망 연결이 실패했습니다. 올바른 가상 사설망 비밀정보가 없습니다."
 
-#: src/applet.c:941
+#: src/applet.c:847
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -852,7 +937,7 @@ msgstr ""
 "\n"
 "'%s' 가상 사설망 연결이 실패했습니다. 가상 사설망 비밀 정보가 잘못되었습니다."
 
-#: src/applet.c:946
+#: src/applet.c:852
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -861,7 +946,7 @@ msgstr ""
 "\n"
 "'%s' 가상 사설망 연결이 실패했습니다."
 
-#: src/applet.c:973
+#: src/applet.c:879
 #, c-format
 msgid ""
 "VPN connection has been successfully established.\n"
@@ -872,19 +957,19 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/applet.c:975
+#: src/applet.c:881
 msgid "VPN connection has been successfully established.\n"
 msgstr "가상 사설망에 성공적으로 연결했습니다.\n"
 
-#: src/applet.c:977
+#: src/applet.c:883
 msgid "VPN Login Message"
 msgstr "가상 사설망 로그인 메시지"
 
-#: src/applet.c:985 src/applet.c:1025
+#: src/applet.c:891 src/applet.c:931
 msgid "VPN Connection Failed"
 msgstr "가상 사설망 연결 실패"
 
-#: src/applet.c:1029
+#: src/applet.c:935
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -898,7 +983,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/applet.c:1032
+#: src/applet.c:938
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -911,139 +996,135 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/applet.c:1347
+#: src/applet.c:1253
 msgid "device not ready (firmware missing)"
 msgstr "장치가 준비되지 않음(펌웨어 없음)"
 
-#: src/applet.c:1349
+#: src/applet.c:1255
 msgid "device not ready"
 msgstr "장치가 준비되지 않음"
 
-#: src/applet.c:1375
+#: src/applet.c:1281
 msgid "Disconnect"
 msgstr "연결 끊김"
 
-#: src/applet.c:1389
+#: src/applet.c:1295
 msgid "device not managed"
 msgstr "장치가 관리되지 않음"
 
-#: src/applet.c:1463
+#: src/applet.c:1369
 msgid "No network devices available"
 msgstr "네트워크 장치를 찾을 수 없습니다"
 
-#: src/applet.c:1509
+#: src/applet.c:1415
 msgid "_VPN Connections"
 msgstr "가상 사설망 연결(_V)"
 
-#: src/applet.c:1553
+#: src/applet.c:1459
 #, fuzzy
 msgid "_Configure VPN…"
 msgstr "가상 사설망 설정(_C)..."
 
-#: src/applet.c:1556
+#: src/applet.c:1462
 #, fuzzy
 msgid "_Add a VPN connection…"
 msgstr "가상 사설망 연결(_V)"
 
-#: src/applet.c:1662
+#: src/applet.c:1568
 #, fuzzy
 msgid "NetworkManager is not running…"
 msgstr "네트워크 관리가 실행 중이 아닙니다..."
 
-#: src/applet.c:1667 src/applet.c:2735
+#: src/applet.c:1573 src/applet.c:2641
 msgid "Networking disabled"
 msgstr "네트워크를 사용할 수 없습니다"
 
 #. 'Enable Networking' item
-#: src/applet.c:1877
+#: src/applet.c:1783
 msgid "Enable _Networking"
 msgstr "네트워크 사용(_N)"
 
 #. 'Enable Wi-Fi' item
-#: src/applet.c:1886
+#: src/applet.c:1792
 msgid "Enable _Wi-Fi"
 msgstr "와이파이 사용(_W)"
 
 #. 'Enable Mobile Broadband' item
-#: src/applet.c:1895
+#: src/applet.c:1801
 msgid "Enable _Mobile Broadband"
 msgstr "모바일 광대역 사용(_M)"
 
 #. Toggle notifications item
-#: src/applet.c:1907
+#: src/applet.c:1813
 msgid "Enable N_otifications"
 msgstr "통지기능 사용(_O)"
 
 #. 'Connection Information' item
-#: src/applet.c:1919
+#: src/applet.c:1825
 msgid "Connection _Information"
 msgstr "연결 정보(_I)"
 
 #. 'Edit Connections...' item
-#: src/applet.c:1927
+#: src/applet.c:1833
 #, fuzzy
 msgid "Edit Connections…"
 msgstr "연결 편집..."
 
-#: src/applet.c:1941
+#: src/applet.c:1847
 msgid "_About"
 msgstr "정보(_A)"
 
-#: src/applet.c:2255
+#: src/applet.c:2161
 #, fuzzy, c-format
 msgid "You are now connected to “%s”."
 msgstr "'%s'에 연결되었습니다."
 
-#: src/applet.c:2295
+#: src/applet.c:2201
 msgid "Disconnected"
 msgstr "연결 끊김"
 
-#: src/applet.c:2296
+#: src/applet.c:2202
 msgid "The network connection has been disconnected."
 msgstr "네트워크 연결이 끊겼습니다."
 
-#: src/applet.c:2598
+#: src/applet.c:2504
 #, fuzzy, c-format
 msgid "Preparing network connection “%s”…"
 msgstr "네트워크 연결 '%s' 준비 중..."
 
-#: src/applet.c:2601
+#: src/applet.c:2507
 #, fuzzy, c-format
 msgid "User authentication required for network connection “%s”…"
 msgstr "네트워크 연결 '%s'에는 사용자 인증이 필요합니다..."
 
-#: src/applet.c:2607
+#: src/applet.c:2513
 #, fuzzy, c-format
 msgid "Network connection “%s” active"
 msgstr "'%s' 네트워크 연결 사용 중"
 
-#: src/applet.c:2680
+#: src/applet.c:2586
 #, fuzzy, c-format
 msgid "Starting VPN connection “%s”…"
 msgstr "가상 사설망 연결 '%s' 시작 중..."
 
-#: src/applet.c:2683
+#: src/applet.c:2589
 #, fuzzy, c-format
 msgid "User authentication required for VPN connection “%s”…"
 msgstr "가상 사설망 연결 '%s'에는 사용자 인증이 필요합니다..."
 
-#: src/applet.c:2686
+#: src/applet.c:2592
 #, fuzzy, c-format
 msgid "Requesting a VPN address for “%s”…"
 msgstr "'%s'에 가상 사설망 주소 요청 중..."
 
-#: src/applet.c:2689
+#: src/applet.c:2595
 #, fuzzy
 msgid "VPN connection active"
 msgstr "가상 사설망 연결 '%s' 사용 중"
 
-#: src/applet.c:2739
+#: src/applet.c:2645
 msgid "No network connection"
 msgstr "네트워크 연결 없음"
-
-#: src/applet.c:3359
-msgid "NetworkManager Applet"
-msgstr "네트워크 관리 애플릿"
 
 #: src/connection-editor/ce-ip4-routes.ui:88
 #: src/connection-editor/ce-ip6-routes.ui:88 src/connection-editor/ce-page.h:97
@@ -1075,7 +1156,7 @@ msgstr ""
 #: src/connection-editor/ce-page-ip6.ui:199
 #: src/connection-editor/ce-page-team.ui:262
 #: src/connection-editor/ce-page-wireguard.ui:617
-#: src/connection-editor/connection-helpers.c:748
+#: src/connection-editor/connection-helpers.c:796
 #: src/connection-editor/nm-connection-list.ui:101
 msgid "_Delete"
 msgstr "삭제(_D)"
@@ -1170,7 +1251,7 @@ msgid "Bonded _connections"
 msgstr "본딩 연결(_C):"
 
 #: src/connection-editor/ce-page-bond.ui:105
-#: src/connection-editor/ce-page-wifi.ui:400
+#: src/connection-editor/ce-page-wifi.ui:294
 #, fuzzy
 msgid "M_ode"
 msgstr "모드(_O):"
@@ -2061,10 +2142,10 @@ msgstr "IPv6 개인 보안 확장(_P):"
 msgid ""
 "If enabled, it makes the kernel generate a temporary IPv6 address in "
 "addition to the public one generated from MAC address. This enhances "
-"privacy, but could cause problems in some applications. If set to \"Default"
-"\", the value from NetworkManager global configuration is used. If that is "
-"also unset, use the kernel default value read from file \"/proc/sys/net/ipv6/"
-"conf/default/use_tempaddr\""
+"privacy, but could cause problems in some applications. If set to "
+"\"Default\", the value from NetworkManager global configuration is used. If "
+"that is also unset, use the kernel default value read from file \"/proc/sys/"
+"net/ipv6/conf/default/use_tempaddr\""
 msgstr ""
 
 #: src/connection-editor/ce-page-ip6.ui:323
@@ -2321,7 +2402,7 @@ msgid "Ad_vanced…"
 msgstr "고급"
 
 #: src/connection-editor/ce-page-team-port.ui:108
-msgid "Set by master"
+msgid "Set by controller"
 msgstr ""
 
 #: src/connection-editor/ce-page-team-port.ui:112
@@ -2748,7 +2829,7 @@ msgstr ""
 #: src/connection-editor/ce-page-team.ui:960
 msgid ""
 "Specifies the minimum number of ports that must be active before asserting "
-"carrier in the master interface, value can be 1 – 255."
+"carrier in the controller interface, value can be 1 – 255."
 msgstr ""
 
 #: src/connection-editor/ce-page-team.ui:972
@@ -2858,40 +2939,22 @@ msgstr ""
 msgid "Ad-hoc"
 msgstr "애드혹"
 
-#: src/connection-editor/ce-page-wifi.ui:203
-msgid "mW"
-msgstr "mW"
-
-#: src/connection-editor/ce-page-wifi.ui:222
-#, fuzzy
-msgid "Transmission po_wer"
-msgstr "전송 출력(_W):"
-
-#: src/connection-editor/ce-page-wifi.ui:256
-msgid "Mb/s"
-msgstr "Mb/s"
-
-#: src/connection-editor/ce-page-wifi.ui:275
-#, fuzzy
-msgid "_Rate"
-msgstr "레이트(_R):"
-
-#: src/connection-editor/ce-page-wifi.ui:311
+#: src/connection-editor/ce-page-wifi.ui:205
 #, fuzzy
 msgid "_BSSID"
 msgstr "BSSID(_B):"
 
-#: src/connection-editor/ce-page-wifi.ui:336
+#: src/connection-editor/ce-page-wifi.ui:230
 #, fuzzy
 msgid "C_hannel"
 msgstr "채널(_H):"
 
-#: src/connection-editor/ce-page-wifi.ui:368
+#: src/connection-editor/ce-page-wifi.ui:262
 #, fuzzy
 msgid "Ban_d"
 msgstr "밴드(_D):"
 
-#: src/connection-editor/ce-page-wifi.ui:414
+#: src/connection-editor/ce-page-wifi.ui:308
 #, fuzzy
 msgid "SS_ID"
 msgstr "SSID(_I):"
@@ -3223,7 +3286,7 @@ msgid "Bond"
 msgstr "본딩"
 
 #: src/connection-editor/connection-helpers.c:105
-#: src/connection-editor/page-team.c:1014
+#: src/connection-editor/page-team.c:1013
 msgid "Team"
 msgstr "팀"
 
@@ -3249,16 +3312,21 @@ msgid "WireGuard"
 msgstr "유선"
 
 #: src/connection-editor/connection-helpers.c:112
-#: src/connection-editor/connection-helpers.c:374
-#: src/connection-editor/page-vpn.c:86
+#: src/connection-editor/connection-helpers.c:422
+#: src/connection-editor/page-vpn.c:92
 msgid "VPN"
 msgstr "가상 사설망"
 
-#: src/connection-editor/connection-helpers.c:192
+#: src/connection-editor/connection-helpers.c:202
+#, c-format
+msgid "VPN plugin “%s” not found"
+msgstr ""
+
+#: src/connection-editor/connection-helpers.c:227
 msgid "No VPN service type."
 msgstr ""
 
-#: src/connection-editor/connection-helpers.c:197
+#: src/connection-editor/connection-helpers.c:241
 #, fuzzy
 msgid "The VPN plugin failed to import the VPN connection correctly: "
 msgstr ""
@@ -3267,49 +3335,49 @@ msgstr ""
 "\n"
 "오류: 가상 사설망 서비스 유형이 없음"
 
-#: src/connection-editor/connection-helpers.c:281
+#: src/connection-editor/connection-helpers.c:329
 #: src/connection-editor/page-proxy.c:104
 #: src/connection-editor/page-team-port.c:189
-#: src/connection-editor/page-team.c:327
+#: src/connection-editor/page-team.c:326
 msgid "Select file to import"
 msgstr "가져올 파일"
 
-#: src/connection-editor/connection-helpers.c:285
+#: src/connection-editor/connection-helpers.c:333
 #: src/connection-editor/page-proxy.c:108
 #: src/connection-editor/page-team-port.c:193
-#: src/connection-editor/page-team.c:331
+#: src/connection-editor/page-team.c:330
 msgid "_Open"
 msgstr ""
 
-#: src/connection-editor/connection-helpers.c:316
+#: src/connection-editor/connection-helpers.c:364
 msgid "Hardware"
 msgstr "하드웨어"
 
-#: src/connection-editor/connection-helpers.c:343
+#: src/connection-editor/connection-helpers.c:391
 msgid "Virtual"
 msgstr "가상"
 
-#: src/connection-editor/connection-helpers.c:492
-#: src/connection-editor/connection-helpers.c:494
+#: src/connection-editor/connection-helpers.c:540
+#: src/connection-editor/connection-helpers.c:542
 #, fuzzy
 msgid "Import a saved VPN configuration…"
 msgstr "저장한 가상 사설망 설정 가져오기..."
 
-#: src/connection-editor/connection-helpers.c:524
+#: src/connection-editor/connection-helpers.c:572
 msgid ""
 "The connection editor dialog could not be initialized due to an unknown "
 "error."
 msgstr "연결 에디터 창을 알려지지 않은 오류 때문에 열 수 없습니다."
 
-#: src/connection-editor/connection-helpers.c:533
+#: src/connection-editor/connection-helpers.c:581
 msgid "Could not create new connection"
 msgstr "새로운 연결을 만들 수 없음"
 
-#: src/connection-editor/connection-helpers.c:696
+#: src/connection-editor/connection-helpers.c:744
 msgid "Connection delete failed"
 msgstr "연결 제거가 실패했습니다"
 
-#: src/connection-editor/connection-helpers.c:744
+#: src/connection-editor/connection-helpers.c:792
 #, c-format
 msgid "Are you sure you wish to delete the connection %s?"
 msgstr "%s 연결을 정말로 제거하시겠습니까?"
@@ -3418,11 +3486,11 @@ msgid ""
 "editor. They will be cleared upon save."
 msgstr ""
 
-#: src/connection-editor/nm-connection-editor.c:749
+#: src/connection-editor/nm-connection-editor.c:751
 msgid "Error initializing editor"
 msgstr "에디터 초기화 중 오류"
 
-#: src/connection-editor/nm-connection-editor.c:1159
+#: src/connection-editor/nm-connection-editor.c:1176
 msgid "Connection add failed"
 msgstr "연결을 추가하는 데 실패했습니다"
 
@@ -3548,46 +3616,46 @@ msgstr "선택한 연결 삭제"
 msgid "Authenticate to delete the selected connection"
 msgstr "선택한 연결을 삭제하도록 인증"
 
-#: src/connection-editor/nm-connection-list.c:1053
+#: src/connection-editor/nm-connection-list.c:1051
 #, fuzzy
 msgid "Unrecognized connection type"
 msgstr "지원하지 않는 모바일 광대역 연결 종류."
 
-#: src/connection-editor/nm-connection-list.c:1058
+#: src/connection-editor/nm-connection-list.c:1057
 #, fuzzy, c-format
 msgid "Don’t know how to import “%s” connections"
 msgstr "'%s' 연결을 만드는 방법을 알지 못합니다"
 
-#: src/connection-editor/nm-connection-list.c:1062
+#: src/connection-editor/nm-connection-list.c:1061
 #, fuzzy
 msgid "Error importing connection"
 msgstr "연결을 편집하는데 오류"
 
-#: src/connection-editor/nm-connection-list.c:1069
-#: src/connection-editor/nm-connection-list.c:1084
-#: src/connection-editor/nm-connection-list.c:1087
+#: src/connection-editor/nm-connection-list.c:1077
+#: src/connection-editor/nm-connection-list.c:1092
+#: src/connection-editor/nm-connection-list.c:1095
 msgid "Error creating connection"
 msgstr "연결을 만드는데 오류"
 
-#: src/connection-editor/nm-connection-list.c:1069
+#: src/connection-editor/nm-connection-list.c:1077
 #, fuzzy
 msgid "Connection type not specified."
 msgstr "연결 제거가 실패했습니다"
 
-#: src/connection-editor/nm-connection-list.c:1085
+#: src/connection-editor/nm-connection-list.c:1093
 msgid "No VPN plugins are installed."
 msgstr "VPN 플러그인을 하나도 설치하지 않았습니다."
 
-#: src/connection-editor/nm-connection-list.c:1088
+#: src/connection-editor/nm-connection-list.c:1096
 #, fuzzy, c-format
 msgid "Don’t know how to create “%s” connections"
 msgstr "'%s' 연결을 만드는 방법을 알지 못합니다"
 
-#: src/connection-editor/nm-connection-list.c:1122
+#: src/connection-editor/nm-connection-list.c:1130
 msgid "Error editing connection"
 msgstr "연결을 편집하는데 오류"
 
-#: src/connection-editor/nm-connection-list.c:1123
+#: src/connection-editor/nm-connection-list.c:1131
 #, fuzzy, c-format
 msgid "Did not find a connection with UUID “%s”"
 msgstr "UUID가 '%s'인 연결을 찾을 수 없습니다"
@@ -3915,18 +3983,18 @@ msgstr "와이맥스 사용자 인터페이스를 읽어들일 수 없습니다.
 msgid "MACSEC connection %d"
 msgstr "와이맥스 연결 %d"
 
-#: src/connection-editor/page-master.c:221
-#: src/connection-editor/page-master.c:232
+#: src/connection-editor/page-controller.c:221
+#: src/connection-editor/page-controller.c:232
 #, fuzzy
 msgid "Duplicate ports"
 msgstr "슬레이브 중복"
 
-#: src/connection-editor/page-master.c:222
+#: src/connection-editor/page-controller.c:222
 #, fuzzy, c-format
 msgid "Ports “%s” and “%s” both apply to device “%s”"
 msgstr "'%s' 및 '%s' 슬레이브가 모두 '%s' 장치에 적용됩니다"
 
-#: src/connection-editor/page-master.c:233
+#: src/connection-editor/page-controller.c:233
 #, fuzzy, c-format
 msgid ""
 "Ports “%s” and “%s” apply to different virtual ports (“%s” and “%s”) of the "
@@ -3935,7 +4003,7 @@ msgstr ""
 "'%s' 및 '%s' 슬레이브가 같은 물리적 장치의 다른 가상 포트('%s' 및 '%s')에 적"
 "용됩니다."
 
-#: src/connection-editor/page-master.c:357
+#: src/connection-editor/page-controller.c:357
 #, c-format
 msgid "%s port %d"
 msgstr ""
@@ -4026,7 +4094,7 @@ msgid "Could not load proxy user interface."
 msgstr "본딩 사용자 인터페이스를 읽어들일 수 없습니다."
 
 #: src/connection-editor/page-team-port.c:209
-#: src/connection-editor/page-team.c:347
+#: src/connection-editor/page-team.c:346
 #, fuzzy
 msgid "Error: file doesn’t contain a valid JSON configuration"
 msgstr "오류: 파일에 올바른 JSON 설정이 들어 있지 않습니다"
@@ -4042,11 +4110,11 @@ msgstr "팀 포트"
 msgid "Could not load team port user interface."
 msgstr "팀 포트 사용자 인터페이스를 읽어들일 수 없습니다."
 
-#: src/connection-editor/page-team.c:1017
+#: src/connection-editor/page-team.c:1016
 msgid "Could not load team user interface."
 msgstr "팀 사용자 인터페이스를 읽어들일 수 없습니다."
 
-#: src/connection-editor/page-team.c:1114
+#: src/connection-editor/page-team.c:1113
 #, c-format
 msgid "Team connection %d"
 msgstr "팀 연결 %d"
@@ -4087,25 +4155,25 @@ msgstr "'%s'에 대한 가상 사설망 플러그인 서비스를 찾을 수 없
 msgid "unknown failure"
 msgstr "연결에 실패"
 
-#: src/connection-editor/page-vpn.c:88
+#: src/connection-editor/page-vpn.c:94
 msgid "Could not load VPN user interface."
 msgstr "가상 사설망 사용자 인터페이스를 읽어들일 수 없습니다."
 
-#: src/connection-editor/page-vpn.c:103
+#: src/connection-editor/page-vpn.c:109
 #, fuzzy, c-format
 msgid "Could not find VPN plugin for “%s”."
 msgstr "'%s'에 대한 가상 사설망 플러그인 서비스를 찾을 수 없습니다."
 
-#: src/connection-editor/page-vpn.c:185
+#: src/connection-editor/page-vpn.c:191
 #, c-format
 msgid "VPN connection %d"
 msgstr "가상 사설망 연결 %d"
 
-#: src/connection-editor/page-vpn.c:191
+#: src/connection-editor/page-vpn.c:197
 msgid "Choose a VPN Connection Type"
 msgstr "가상 사설망 연결 종류 선택"
 
-#: src/connection-editor/page-vpn.c:192
+#: src/connection-editor/page-vpn.c:198
 #, fuzzy
 msgid ""
 "Select the type of VPN you wish to use for the new connection. If the type "
@@ -4116,55 +4184,58 @@ msgstr ""
 "연결 종류가 목록에 없으면, 가상 사설망 플러그인이 제대로 설치되지 않았을 수"
 "도 있습니다."
 
-#: src/connection-editor/page-wifi-security.c:346
+#: src/connection-editor/page-wifi-security.c:359
 msgid "WEP 40/128-bit Key (Hex or ASCII)"
 msgstr "WEP 40/128비트 키(Hex 또는 ASCII)"
 
-#: src/connection-editor/page-wifi-security.c:356
+#: src/connection-editor/page-wifi-security.c:372
 msgid "WEP 128-bit Passphrase"
 msgstr "WEP 128비트 열쇠글"
 
-#: src/connection-editor/page-wifi-security.c:382
+#: src/connection-editor/page-wifi-security.c:397
 #, fuzzy
 msgid "Dynamic WEP (802.1X)"
 msgstr "동적 WEP (802.1x)"
 
-#: src/connection-editor/page-wifi-security.c:395
-msgid "WPA & WPA2 Personal"
+#: src/connection-editor/page-wifi-security.c:410
+#, fuzzy
+msgid "WPA/WPA2/WPA3 Personal"
 msgstr "개인용 WPA 또는 WPA2"
 
-#: src/connection-editor/page-wifi-security.c:408
-msgid "WPA & WPA2 Enterprise"
+#: src/connection-editor/page-wifi-security.c:423
+#, fuzzy
+msgid "WPA/WPA2 Enterprise"
 msgstr "기업용 WPA 또는 WPA2"
 
-#: src/connection-editor/page-wifi-security.c:421
+#: src/connection-editor/page-wifi-security.c:436
 #, fuzzy
 msgid "WPA3 Personal"
 msgstr "개인용 WPA 또는 WPA2"
 
-#: src/connection-editor/page-wifi-security.c:431
+#: src/connection-editor/page-wifi-security.c:449
+#: src/connection-editor/page-wifi-security.c:457
 msgid "Enhanced Open"
 msgstr ""
 
-#: src/connection-editor/page-wifi-security.c:476
+#: src/connection-editor/page-wifi-security.c:503
 msgid "Could not load Wi-Fi security user interface; missing Wi-Fi setting."
 msgstr ""
 "와이파이 보안 사용자 인터페이스를 읽어들일 수 없습니다. 와이파이 설정이 없습"
 "니다."
 
-#: src/connection-editor/page-wifi-security.c:487
+#: src/connection-editor/page-wifi-security.c:514
 msgid "Wi-Fi Security"
 msgstr "와이파이 보안"
 
-#: src/connection-editor/page-wifi-security.c:489
+#: src/connection-editor/page-wifi-security.c:516
 msgid "Could not load Wi-Fi security user interface."
 msgstr "와이파이 보안 사용자 인터페이스를 읽어들일 수 없습니다."
 
-#: src/connection-editor/page-wifi-security.c:570
+#: src/connection-editor/page-wifi-security.c:597
 msgid "missing SSID"
 msgstr ""
 
-#: src/connection-editor/page-wifi-security.c:576
+#: src/connection-editor/page-wifi-security.c:603
 msgid "Security not compatible with Ad-Hoc mode"
 msgstr ""
 
@@ -4416,6 +4487,23 @@ msgstr "DEP 혹은 PEM 인증서(*.det, *.pem, *.crt, *.cer)"
 msgid "DER, PEM, or PKCS#12 private keys (*.der, *.pem, *.p12, *.key)"
 msgstr "DER, PEM, 또는 PKCS#12 비밀 키(*.der, *.pem, *.p12, *.key)"
 
+#~ msgid "mW"
+#~ msgstr "mW"
+
+#, fuzzy
+#~ msgid "Transmission po_wer"
+#~ msgstr "전송 출력(_W):"
+
+#~ msgid "Mb/s"
+#~ msgstr "Mb/s"
+
+#, fuzzy
+#~ msgid "_Rate"
+#~ msgstr "레이트(_R):"
+
+#~ msgid "More networks"
+#~ msgstr "다른 네트워크"
+
 #~ msgid "GTC"
 #~ msgstr "GTC"
 
@@ -4534,59 +4622,6 @@ msgstr "DER, PEM, 또는 PKCS#12 비밀 키(*.der, *.pem, *.p12, *.key)"
 #, fuzzy
 #~ msgid "WEP inde_x"
 #~ msgstr "WEP 인덱스(_X):"
-
-#~ msgid "Disable connected notifications"
-#~ msgstr "연결이 되면 알려주지 않음"
-
-#~ msgid ""
-#~ "Set this to true to disable notifications when connecting to a network."
-#~ msgstr "참이면 네트워크에 연결되었을 때 알려주지 않습니다."
-
-#~ msgid "Disable disconnected notifications"
-#~ msgstr "연결이 끊기면 알려주지 않음"
-
-#~ msgid ""
-#~ "Set this to true to disable notifications when disconnecting from a "
-#~ "network."
-#~ msgstr "참이면 네트워크가 끊어졌을 때 알려주지 않습니다."
-
-#~ msgid "Disable VPN notifications"
-#~ msgstr "가상 사설망 알려주지 않음"
-
-#~ msgid ""
-#~ "Set this to true to disable notifications when connecting to or "
-#~ "disconnecting from a VPN."
-#~ msgstr ""
-#~ "참이면 가상 사설망에 연결하거나 연결이 끊어졌을 때 알려주지 않습니다."
-
-#~ msgid "Suppress networks available notifications"
-#~ msgstr "네트워크에서 사용 가능한 통지를 무시합니다"
-
-#~ msgid ""
-#~ "Set this to true to disable notifications when Wi-Fi networks are "
-#~ "available."
-#~ msgstr "참이면 와이파이 네트워크가 사용 가능할 때 알려주지 않습니다."
-
-#~ msgid "Stamp"
-#~ msgstr "스탬프"
-
-#~ msgid ""
-#~ "Used to determine whether settings should be migrated to a new version."
-#~ msgstr "설정을 새로운 버전으로 옮겨야 할지를 결정하려고 사용합니다."
-
-#~ msgid "Disable WiFi Create"
-#~ msgstr "와이파이 만들기 사용하지 않음"
-
-#~ msgid ""
-#~ "Set to true to disable creation of adhoc networks when using the applet."
-#~ msgstr "참이면 애플릿 사용할 때 애드혹 네트워크를 만들지 않습니다."
-
-#~ msgid "Show the applet in notification area"
-#~ msgstr "알림 영역에 애플릿 표시"
-
-#~ msgid ""
-#~ "Set to FALSE to disable displaying the applet in the notification area."
-#~ msgstr "거짓으로 설정하면 알림 영역에 애플릿 표시를 하지 않습니다."
 
 #~ msgid "Ignore CA certificate"
 #~ msgstr "CA 인증서 무시"
